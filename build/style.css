@@ -6372,11 +6372,18 @@ body {
   font-size: 16px; }
 
 .header {
+  background-color: #191919; }
+  .header__content {
+    padding: 137px 0; }
+
+.content--background {
   background-color: rgba(0, 0, 0, 0.760784); }
-  .header--backgournd {
-    background: url(images/headerbackground.jpg) no-repeat center center;
-    background-size: cover;
-    color: white; }
+
+.header-content-background {
+  background-size: cover;
+  color: white;
+  background: url(images/headerbackground.jpg) no-repeat center center;
+  color: white; }
 
 .nav {
   display: -webkit-box;
