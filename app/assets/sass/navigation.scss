@@ -1,0 +1,35 @@
+.nav{
+  display: flex;
+  flex-direction: row;
+  /*justify-content: space-between;*/
+  align-items: center;
+  padding: 10px 0;
+  &__logo img{
+    width: 200px;
+  }
+  &__title{
+    font-size: 18px;
+    text-transform: uppercase;
+    color: white;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    align-self: flex-start;
+    margin-left: 15px;
+  }
+  &__tel{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    align-self: center;
+    color: white;
+    font-size: 22px;
+    margin-left: auto;
+    width: 20%;
+    text-align: right;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+      opacity: 0.8;
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+}
