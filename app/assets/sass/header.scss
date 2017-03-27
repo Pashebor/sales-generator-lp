@@ -4,6 +4,19 @@ $header-text-color: rgb(255, 255, 255);
   background-color: rgb(25, 25, 25);
   &__content{
     padding: 137px 0;
+    text-shadow: rgba(0, 0, 0, 0.5) 1px 3px 2px;
+    &-title{
+      font-size: 40px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-family: $headers-font-regular;
+      span{
+        color: rgb(144, 200, 249);
+      }
+    }
+    &-text{
+      font-size: 28px;
+    }
   }
 }
 

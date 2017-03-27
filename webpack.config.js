@@ -9,7 +9,8 @@ module.exports = {
     entry: {
         sales_generator_lp: path.resolve(root, 'sales.generator.lp.jsx'),
         style: path.resolve(root, 'assets/sass/style.scss'),
-        saleslogo: path.resolve(root, 'assets/images/saleslogowhite.svg')
+        saleslogo: path.resolve(root, 'assets/images/saleslogowhite.svg'),
+        circle: path.resolve(root, 'assets/images/circle.svg')
         /*flower: path.resolve(root, 'assets/img/flowers.png'),
         paint: path.resolve(root, 'assets/img/paint.png'),
         loading: path.resolve(root, 'assets/img/loading.png')*/

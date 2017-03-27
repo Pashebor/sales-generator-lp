@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: OpenSansLight;
   src: url(../fonts/OpenSans-Light.ttf);
@@ -13,7 +14,13 @@
   src: url(../fonts/OpenSans-Bold.ttf);
 }
 
+$primary-font: OpenSansLight;
+$headers-font-regular: OpenSansRegular;
+$headers-font-bold: OpenSansBold;
+$secondary-font: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+
 body{
-  font-family: OpenSansLight;
+  font-family: $primary-font;
   font-size: 16px;
 }
