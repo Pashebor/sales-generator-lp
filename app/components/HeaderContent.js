@@ -17,7 +17,10 @@ class HeaderContent extends Component{
                             <input type="button" className="btn"  value="Узнать!"/>
                         </form>
                     </div>
-                    <div className="bigcircle-bottom"><img src="images/circle.svg"/></div>
+                    <div className="separatorbottom">
+                        <div className="bigcircle-bottom">
+                        </div>
+                    </div>
                 </div>
             </section>
         );

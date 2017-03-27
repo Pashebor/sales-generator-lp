@@ -63,15 +63,15 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 130);
+/******/ 	return __webpack_require__(__webpack_require__.s = 129);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 130:
+/***/ 129:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "images/saleslogowhite.svg";
+module.exports = __webpack_require__.p + "images/circle.svg";
 
 /***/ })
 
