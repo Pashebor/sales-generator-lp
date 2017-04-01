@@ -9,7 +9,22 @@ module.exports = {
     entry: {
         sales_generator_lp: path.resolve(root, 'sales.generator.lp.jsx'),
         style: path.resolve(root, 'assets/sass/style.scss'),
-        saleslogo: path.resolve(root, 'assets/images/saleslogowhite.svg')
+        saleslogo: path.resolve(root, 'assets/images/saleslogowhite.svg'),
+        circle: path.resolve(root, 'assets/images/circle.svg'),
+        gears: path.resolve(root, 'assets/images/gears.png'),
+        cam: path.resolve(root, 'assets/images/cam.png'),
+        cmsability: path.resolve(root, 'assets/images/cms-ability.png'),
+        htmlvalidator: path.resolve(root, 'assets/images/html-validator.png'),
+        rocket: path.resolve(root, 'assets/images/rocket.png'),
+        aim: path.resolve(root, 'assets/images/aim.png'),
+        firstplace: path.resolve(root, 'assets/images/firstplace.png'),
+        grow: path.resolve(root, 'assets/images/grow.png'),
+        id: path.resolve(root, 'assets/images/id.png'),
+        tools: path.resolve(root, 'assets/images/tools.png'),
+        clients: path.resolve(root, 'assets/images/clients.svg'),
+        lowprice: path.resolve(root, 'assets/images/lowprice.svg'),
+        schedule: path.resolve(root, 'assets/images/schedule.svg'),
+        includebackground: path.resolve(root, 'assets/images/includebackground.jpg')
         /*flower: path.resolve(root, 'assets/img/flowers.png'),
         paint: path.resolve(root, 'assets/img/paint.png'),
         loading: path.resolve(root, 'assets/img/loading.png')*/
