@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: OpenSansLight;
   src: url(../fonts/OpenSans-Light.ttf);
@@ -13,7 +14,25 @@
   src: url(../fonts/OpenSans-Bold.ttf);
 }
 
+@font-face {
+  font-family: RobotoSlabRegular;
+  src: url(../fonts/RobotoSlab-Regular.ttf);
+}
+
+@font-face {
+  font-family: RobotoSlabBold;
+  src: url(../fonts/RobotoSlab-Bold.ttf);
+}
+
+$primary-font: OpenSansLight;
+$headers-font-regular: OpenSansRegular;
+$headers-font-bold: OpenSansBold;
+$secondary-font: "Helvetica Neue",Helvetica,Arial,sans-serif;
+$seo-font: RobotoSlabRegular;
+$seo-font-bold: RobotoSlabBold;
+
+
 body{
-  font-family: OpenSansLight;
+  font-family: $primary-font;
   font-size: 16px;
 }
