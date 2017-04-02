@@ -4,7 +4,7 @@ const YouSiteAudit = () =>{
         return(
             <section className="audit">
                 <div className="container">
-                    <h2 className="seo__title">Аудит Вашего сайта поможет</h2>
+                    <h2 className="audit__title">Аудит Вашего сайта поможет</h2>
                     <div className="audit-info">
                         <div className="audit-info__item">
                             <img src="images/schedule.svg" alt="Позиции" title="Поднять позиции"/>

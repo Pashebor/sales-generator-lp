@@ -23,7 +23,8 @@ module.exports = {
         tools: path.resolve(root, 'assets/images/tools.png'),
         clients: path.resolve(root, 'assets/images/clients.svg'),
         lowprice: path.resolve(root, 'assets/images/lowprice.svg'),
-        schedule: path.resolve(root, 'assets/images/schedule.svg')
+        schedule: path.resolve(root, 'assets/images/schedule.svg'),
+        includebackground: path.resolve(root, 'assets/images/includebackground.jpg')
         /*flower: path.resolve(root, 'assets/img/flowers.png'),
         paint: path.resolve(root, 'assets/img/paint.png'),
         loading: path.resolve(root, 'assets/img/loading.png')*/

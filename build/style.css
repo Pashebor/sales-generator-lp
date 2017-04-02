@@ -6451,12 +6451,12 @@ body {
   position: relative;
   color: #474747;
   background-color: whitesmoke; }
-  .seo__title {
+  .seo__title, .audit__title, .include__title {
     font-family: RobotoSlabBold;
     font-size: 40px;
     text-align: center;
     position: relative; }
-    .seo__title::before {
+    .seo__title::before, .audit__title::before, .include__title::before {
       content: '';
       width: 0;
       width: 100%;
@@ -6464,7 +6464,7 @@ body {
       left: 0;
       position: absolute;
       border-top: 1px solid #ccc; }
-    .seo__title::after {
+    .seo__title::after, .audit__title::after, .include__title::after {
       content: '';
       width: 0;
       width: 100%;
@@ -6511,7 +6511,7 @@ body {
           color: #e53835; }
         .seo__partitions__header .useful--yes {
           color: #5cb860; }
-    .seo__partitions-items {
+    .seo__partitions-items, .include-materials__list .list-item {
       font-family: OpenSansLight;
       font-size: 22px;
       position: relative;
@@ -6525,20 +6525,20 @@ body {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center; }
-      .seo__partitions-items::before {
+      .seo__partitions-items::before, .include-materials__list .list-item::before {
         content: '';
         height: 100%;
         left: 70px;
         position: absolute;
         border-left: 1px solid #ccc; }
-      .seo__partitions-items::after {
+      .seo__partitions-items::after, .include-materials__list .list-item::after {
         content: '';
         height: 100%;
         left: 68px;
         top: 0;
         position: absolute;
         border-left: 1px solid #ccc; }
-      .seo__partitions-items img {
+      .seo__partitions-items img, .include-materials__list .list-item img {
         float: left;
         padding-right: 10px;
         width: 74px;
@@ -6605,7 +6605,7 @@ body {
 
 /*Seo block END*/
 /*Audit Block START*/
-.audit {
+.audit, .include {
   margin: 120px 0 0 0; }
   .audit-info {
     display: -webkit-box;
@@ -6638,6 +6638,40 @@ body {
         text-align: center; }
 
 /*Audit Block END*/
+/*Include-audit block START*/
+.include {
+  position: relative;
+  background-size: cover;
+  background: url(images/includebackground.jpg) no-repeat center center; }
+  .include-wrapper {
+    background-color: rgba(0, 0, 0, 0.658824);
+    padding-top: 50px; }
+  .include-materials {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row; }
+    .include-materials__list, .include-materials__desc {
+      width: 48%; }
+    .include-materials__list .list-item {
+      color: white;
+      font-family: OpenSansRegular; }
+      .include-materials__list .list-item::after, .include-materials__list .list-item::before {
+        border-left: 1px solid #333333; }
+      .include-materials__list .list-item img {
+        padding-right: 0px;
+        margin-right: 20px;
+        width: 61px; }
+  .include__title {
+    margin-bottom: 38px;
+    color: white; }
+    .include__title::after, .include__title::before {
+      border-color: #333333; }
+
+/*Include-audit block END*/
 .btn {
   background-color: #61bd70;
   border-radius: 5px;
@@ -6707,3 +6741,16 @@ body {
     border-radius: 50% / 50%;
     position: relative;
     right: 20px; }
+
+.separatortop {
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  overflow: hidden; }
+  .separatortop #triangle {
+    height: 34px;
+    width: 100%;
+    fill: white; }

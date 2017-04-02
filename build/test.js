@@ -63,15 +63,15 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 139);
+/******/ 	return __webpack_require__(__webpack_require__.s = 148);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 139:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 148:
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "images/gears.png";
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'D:\\AppServ\\www\\sales-generator-lp\\app\\assets\\images\\test.svg'\n    at Error (native)");
 
 /***/ })
 
