@@ -1,0 +1,75 @@
+.popup-overlay{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  display: none;
+  z-index: 1000;
+
+  .popup-form{
+    margin: auto;
+    top: 100px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    animation: formBlockAnim 0.3s 1 linear;
+    z-index: 9999;
+    &__close{
+      position: absolute;
+      top: 0px;
+      right: 10px;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: rgb(199, 29, 26);
+      cursor: pointer;
+      font-family: $headers-font-bold;
+      transition: color 0.3s ease-in-out;
+      &:hover{
+        color: black;
+      }
+    }
+    p{
+      font-family: $headers-font-regular;
+      font-size: 22px;
+      text-align: center;
+    }
+    span{
+      color: rgb(199, 29, 26);
+    }
+    input[type="text"]{
+      border-width: 2px;
+      padding: 10px 12px;
+      height: 44px;
+      border-radius: 5px;
+      line-height: 20px;
+    }
+    input[type="submit"] {
+      display: block;
+      width: 50%;
+      margin: 15px auto 0 auto;
+    }
+  }
+}
+
+@keyframes popupAnimOpen {
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
+@keyframes popupAnimClose {
+  from{opacity: 1;}
+  to{opacity: 0;}
+}
+
+@keyframes formBlockAnim {
+    from{top: -100px;}
+    to{top: 100px;}
+}

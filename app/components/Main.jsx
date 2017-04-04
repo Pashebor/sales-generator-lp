@@ -2,6 +2,9 @@ import React from 'react';
 import { Component } from 'react';
 import SeoBlock from './SeoBlock.js';
 import YouSiteAudit from './YouSiteAudit';
+import IncludeAudit from './IncludeAudit';
+import Results from './Results';
+import Proposition from './Proposition';
 
 class Main extends Component{
     render() {
@@ -9,6 +12,9 @@ class Main extends Component{
            <main className="main">
                <SeoBlock/>
                <YouSiteAudit/>
+               <IncludeAudit/>
+               <Results/>
+               <Proposition/>
            </main>
         )
     };

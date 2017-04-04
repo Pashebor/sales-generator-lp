@@ -1,0 +1,91 @@
+@media screen and (min-width: 501px) and (max-width: 900px) {
+  .btn--callback{
+    margin-left: 0px;
+    width: 50%;
+  }
+  .nav{
+    flex-flow: row wrap;
+    justify-content: center;
+    &__tel{
+      margin-left: 0px;
+      width: 50%;
+      text-align: center;
+    }
+    &__title{
+      text-align: center;
+      width: 50%;
+      margin-left: 0px;
+    }
+    &__logo{
+      width: 50%;
+      img{
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+
+  .header{
+    &__content{
+      padding: 20px 0 0 0;
+      &-title{
+        font-size: 30px;
+        text-align: center;
+        line-height: 40px;
+      }
+      &-text{
+        text-align: center;
+        padding: 0 10px;
+        font-size: 25px;
+      }
+    }
+  }
+
+  .know-form{
+    width: 100%;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+
+    input[type="text"]{
+      width: 60%;
+      margin-left: 0px;
+    }
+
+    input[type="button"]{
+      width: 25%;
+    }
+
+    &__title{
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+
+  .seo{
+    &__partitions{
+      &-items{
+        font-size: 16px;
+      }
+    }
+  }
+
+  .include-materials__desc{
+    .btn{
+      white-space: normal;
+    }
+  }
+
+  .proposition-block__item:last-child{
+    form{
+      .btn{
+        white-space: normal;
+      }
+    }
+  }
+
+  .results-info__item{
+    width: 50%;
+  }
+
+}

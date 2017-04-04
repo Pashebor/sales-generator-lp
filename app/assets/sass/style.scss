@@ -3,6 +3,9 @@
 @import "header";
 @import "navigation";
 @import "main";
+@import "footer";
+@import "modal-form";
+
 
 .btn{
   background-color: rgb(97, 189, 112);
@@ -77,3 +80,35 @@
     right: 20px;
   }
 }
+
+.separatortop{
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  overflow: hidden;
+  #triangle{
+    height: 34px;
+    width: 100%;
+    fill: white;
+  }
+}
+
+.separator-bottom{
+  width: 100%;
+  z-index: 4;
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  .gradient-bottom{
+    height: 50px;
+    /*background: white; */
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, white 100%);
+  }
+}
+
+@import "mobile-styles";
+@import "tablet-styles";

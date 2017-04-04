@@ -1,10 +1,14 @@
-const initialState = [];
+import {GET_MODAL_FORM} from '../actions/index';
+
+const initialState = {
+    modalShow: false,
+    outSide: false
+};
 
 const salesReducer =  ( state = initialState, action) => {
     switch (action.type) {
-        case 'ALL':
-            let images;
-            return images = action.payload;
+        case GET_MODAL_FORM:
+            return Object.assign({}, state, {modalShow: action.show});
         default: return state;
     }
 };
