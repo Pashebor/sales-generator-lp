@@ -36,7 +36,7 @@ module.exports = {
         filename: '[name].js'
     },
 
-    watch: true,
+    watch: false,
 
     module: {
         loaders: [

@@ -12,7 +12,7 @@
     font-size: 40px;
     text-align: center;
     position: relative;
-    &::before{
+    /*&::before{
       content: '';
       width: 0;
       width: 100%;
@@ -29,7 +29,7 @@
       left: 0;
       position: absolute;
       border-top: 1px solid #ccc;
-    }
+    }*/
   }
   &__partitions{
     display: flex;
@@ -38,7 +38,7 @@
     justify-content: space-between;
     position: relative;
     margin: 0 0 20px 0;
-    &::after{
+   /* &::after{
       content: '';
       width: 100%;
       left: 0;
@@ -53,7 +53,7 @@
       bottom: -17px;
       position: absolute;
       border-bottom: 1px solid #ccc;
-    }
+    }*/
     &__header{
       font-size: 30px;
       font-family: $seo-font;
@@ -76,7 +76,7 @@
       display: flex;
       flex-flow: row;
       align-items: center;
-      &::before{
+      /*&::before{
         content: '';
         height: 100%;
         left: 70px;
@@ -90,7 +90,7 @@
           top: 0;
           position: absolute;
           border-left: 1px solid #ccc;
-      }
+      }*/
       img{
         float: left;
         padding-right: 10px;
@@ -173,7 +173,7 @@
     flex-flow: row;
     justify-content: space-around;
     margin: 60px 0 0 0;
-    border: 1px dotted #ccc;
+    /*border: 1px dotted #ccc;*/
     padding: 40px 0;
     &__item{
       width: 30%;
@@ -182,7 +182,13 @@
         height: 128px;
         display: block;
         margin: auto;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+          transform: scale(1.2);
+        }
       }
+
       @each $tv in (h4, p) {
         #{$tv}{
           font-size: 22px;
@@ -315,10 +321,11 @@
 .proposition{
   margin-top: -30px;
   padding-bottom: 50px;
-  background-size: auto;
+  background-color: whitesmoke;
+ /* background-size: auto;
   background-position: center center;
   background-repeat: repeat;
-  background-image: url("../images/sheetbackground.png");
+  background-image: url("../images/sheetbackground.png");*/
   &__title{
     margin-top: 120px;
     @extend .audit__title;
