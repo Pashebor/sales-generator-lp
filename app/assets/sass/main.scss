@@ -7,6 +7,8 @@
   position: relative;
   color: rgb(71, 71, 71);
   background-color: rgb(245, 245, 245);
+  padding: 100px 0 100px 0;
+  top: -32px;
   &__title{
     font-family: $seo-font-bold;
     font-size: 40px;
@@ -108,6 +110,10 @@
     }
     @if $i == 1 {
       &__partition--#{$i}{
+        img{
+            filter: grayscale(100%);
+        }
+
         /*&::after{
           content: '';
           width: 0;
@@ -164,7 +170,30 @@
 
 /*Audit Block START*/
 .audit{
-  margin: 120px 0 0 0;
+  position: relative;
+  z-index: 1;
+  margin: 20px 0 0 0;
+  .zigzag-bottom{
+    margin: 0 0 32px;
+    padding: 3px 0;
+    &::after{
+      background:
+              linear-gradient(-45deg, transparent 80px, white 0),
+              linear-gradient(45deg, transparent 80px, white  0);
+      background-repeat: repeat-x;
+      background-position: left bottom;
+      background-size: 115px 61px;
+      content: "";
+      display: block;
+
+      width: 100%;
+      height: 61px;
+
+      position: relative;
+      top:64px;
+      left:0px;
+    }
+  }
   &__title{
     @extend .seo__title;
   }
@@ -172,9 +201,9 @@
     display: flex;
     flex-flow: row;
     justify-content: space-around;
-    margin: 60px 0 0 0;
+    margin: 60px 0 -15px 0;
     /*border: 1px dotted #ccc;*/
-    padding: 40px 0;
+    /*padding: 40px 0;*/
     &__item{
       width: 30%;
       img{
@@ -210,6 +239,7 @@
     @extend .audit;
     position: relative;
     background-size: cover;
+    margin-top: -35px;
     background-position: center center;
     background-repeat: no-repeat;
     background-image: url("../images/includebackground.jpg");
@@ -217,16 +247,31 @@
       background-color: rgba(0, 0, 0, 0.658824);
       padding-top: 50px;
       padding-bottom: 50px;
+      .separatortop{
+         #triangle{
+           fill: whitesmoke;
+         }
+      }
     }
     &-materials{
       display: flex;
       flex-flow: row;
-      &__list, &__desc{
-        width: 48%;
+      justify-content: space-between;
+      padding-top: 25px;
+      &__list{
+        width: 55%;
+        margin: 50px 0 0 0;
+      }
+      &__desc{
+        width: 40%;
+        img{
+          cursor: zoom-in;
+        }
       }
       &__list{
         .list-item{
           @extend .seo__partitions-items;
+          margin-bottom: 25px;
           color: white;
           font-family: $primary-font;
           &::after, &::before{
@@ -240,7 +285,7 @@
         }
       }
       &__desc{
-        padding-top: 50px;
+        padding-top: 0px;
         div{
           width: 100%;
         }
@@ -248,7 +293,9 @@
           width: inherit;
         }
         .btn{
-          margin-top: 50px;
+          margin-top: 0px;
+          width: 100%;
+          white-space: normal;
         }
       }
     }
@@ -265,6 +312,39 @@
 /*Result block START*/
 .results{
   position: relative;
+
+  .slick-prev:before {
+    font-family: FontAwesome;
+    content: '\f104';
+    color: black;
+  }
+  .slick-next:before{
+    font-family: FontAwesome;
+    content: '\f105';
+    color: black;
+  }
+  .slick{
+    @each $arrow in (-next, -prev) {
+      &#{$arrow}::before {
+        opacity: 0.3;
+        transition: opacity 0.3s ease-in-out;
+      }
+      &#{$arrow}:hover::before{
+        opacity: 1;
+      }
+    }
+
+    &-next{
+      right: 10px;
+      position: absolute;
+      z-index: 1;
+    }
+    &-prev{
+      left: 1px;
+      position: absolute;
+      z-index: 1;
+    }
+  }
   .zigzag-bottom{
     margin: 0 0 32px;
     padding: 3px 0;
@@ -288,7 +368,6 @@
   }
   &__title{
     @extend .audit__title;
-    font-family: $headers-font-regular;
     font-size: 32px;
     margin-top: 50px;
   }
@@ -302,16 +381,31 @@
     }
   }
   &-info{
-    @extend .audit-info;
-    flex-flow: row wrap;
-    width: 100%;
-    justify-content: space-around;
-    padding: 20px 0;
-    margin: 40px 0 0 0;
-    &__item{
-      width: 33%;
-      img{
+    &__row{
+      @extend .audit-info;
+      flex-flow: row;
+      justify-content: space-between;
+      width: 100%;
+      justify-content: center;
+      margin: 0;
+    }
+    &__column{
+      display: flex;
+      flex-flow: column;
+      width: 98%;
+      padding: 20px 0;
+      margin: 0;
+      cursor: zoom-in;
+      &__item{
         width: 100%;
+        transition: all 0.3s ease-in-out;
+        margin-bottom: 5px;
+        img{
+          width: 100%;
+        }
+        &:hover{
+          box-shadow: 0 0 2px 2px #61bd70;
+        }
       }
     }
   }
@@ -357,7 +451,7 @@
         position: relative;
         top: -25px;
         font-family: $headers-font-bold;
-        color: rgb(25, 123, 48);
+        color: #61bd70;
         font-size: 104px;
       }
       p:last-child{
@@ -387,7 +481,7 @@
       p{
         font-size: 22px;
         span{
-          color: rgb(76, 175, 80);
+          color: #61bd70;
           font-family: $headers-font-regular;
           font-weight: 600;
         }
@@ -397,3 +491,19 @@
   }
 }
 /*Proposition block END*/
+
+@media screen and (min-width: 1501px){
+  .header{
+    &__content{
+      padding: 180px 0 80px 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1500px){
+  .header{
+    &__content{
+      padding: 100px 0 20px 0;
+    }
+  }
+}

@@ -11,12 +11,12 @@ const Footer = () => {
               <div className="footer-container">
                 <div className="footer__logo"><img src="images/saleslogowhite.svg"  alt="Sales Generator logo"/></div>
                 <address className="footer__address">
-                    <p>admin@yandex.ru</p>
-                    <p>г. Москва,</p>
+                    <p>info@salesgenerator.pro</p>
+                    <p>г. Москва</p>
                 </address>
                 <div className="footer__phone">
                     <p>Звонок по России бесплатный</p>
-                    <a href="tel: +7 (495) 123-45-67">+7 (495) 123-45-67</a>
+                    <a href="tel: 8 (800) 775 43 06">8 (800) 775 43 06</a>
                 </div>
 
               </div>

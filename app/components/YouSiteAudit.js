@@ -10,6 +10,7 @@ class YouSiteAudit extends Component{
     render() {
         return(
             <section className="audit">
+              <div className="zigzag-bottom">
                 <div className="container">
                     <h2 className="audit__title">Аудит Вашего сайта поможет</h2>
                     <div className="audit-info">
@@ -30,6 +31,7 @@ class YouSiteAudit extends Component{
                         </div>
                     </div>
                 </div>
+              </div>
             </section>
         );
     }

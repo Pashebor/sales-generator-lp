@@ -10,8 +10,8 @@ class Main extends Component{
     render() {
         return(
            <main className="main">
-               <SeoBlock/>
                <YouSiteAudit/>
+               <SeoBlock/>
                <IncludeAudit/>
                <Results/>
                <Proposition/>

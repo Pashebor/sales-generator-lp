@@ -30,6 +30,9 @@
         font-size: 20px;
       }
     }
+    &-content-background{
+      background: url("../images/headerbackground.png") no-repeat 10% 100%;
+    }
   }
   .know-form{
     width: 100%;
@@ -91,7 +94,7 @@
   }
 
   .include{
-    margin: 40px 0 0 0;
+   /* margin: 40px 0 0 0;*/
     &-materials{
       flex-flow: column;
       &__list{
@@ -157,6 +160,15 @@
     width: 90%;
     input[type="submit"]{
       width: 100%;
+    }
+  }
+
+  .popup-slider-overlay{
+    .popup-slider{
+      width: 95%;
+      .slick-next, .slick-prev{
+        display: none !important;
+      }
     }
   }
 }

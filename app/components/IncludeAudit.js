@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {showModal} from '../actions/index';
+import {showModal, openSlider} from '../actions/index';
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
 
@@ -7,6 +7,9 @@ import {connect} from 'react-redux';
 class IncludeAudit extends Component{
     showModalHandler(){
         this.props.showModal(true);
+    }
+    showSliderHandler() {
+        this.props.openSlider(true);
     }
     render() {
     return(
@@ -19,17 +22,15 @@ class IncludeAudit extends Component{
                    <h2 className="include__title">Что включает в себя аудит:</h2>
                    <div className="include-materials">
                        <div className="include-materials__list">
-                         <p className="list-item"><img src="images/grow-icon.svg"/>Потенциал роста сайта</p>
-                         <p className="list-item"><img src="images/cart-icon.svg"/>Анализ продающих свойств сайта</p>
-                         <p className="list-item"><img src="images/analyze-icon.svg"/>Анализ качества внутренней и внешней оптимизации</p>
-                         <p className="list-item"><img src="images/aim-icon.svg"/>Анализ поведенческих факторов</p>
-                         <p className="list-item"><img src="images/client-icon.svg"/>Способы привлечения новых клиентов</p>
-                         <p className="list-item"><img src="images/atom-icon.svg"/>Анализ семантического ядра</p>
-                         <p className="list-item"><img src="images/profile-icon.svg"/>Контент-анализ</p>
+                         <p className="list-item"><img src="images/grow.svg"/>Рекомендации по увеличению посещаемости и продаж с Вашего сайта</p>
+                         <p className="list-item"><img src="images/questions.svg"/>Полное и четкое понимание всех плюсов и минусов вашего сайта</p>
+                         <p className="list-item"><img src="images/search.svg"/>Анализ ошибок внутренней и внешней оптимизации сайта</p>
+                         <p className="list-item"><img src="images/gauge.svg"/>Оценка потенциала Вашего сайта для дальнейшего продвижения</p>
+                         <p className="list-item"><img src="images/list.svg"/>Список действий, которые дадут максимальный эффект в краткосрочном периоде</p>
                        </div>
                        <div className="include-materials__desc">
                            <div>
-                               <img src="images/sheets.png" alt="Примеры работ" title="Примеры работ"/>
+                               <img src="images/pages-audit.png" alt="Примеры работ" title="Примеры работ" onClick={this.showSliderHandler.bind(this)}/>
                            </div>
                            <button className="btn" onClick={this.showModalHandler.bind(this)}>Узнайте, сколько клиентов может принести Ваш сайт!</button>
                        </div>
@@ -48,7 +49,7 @@ const mapStateToProps = (store) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({showModal}, dispatch);
+    return bindActionCreators({showModal, openSlider}, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(IncludeAudit);

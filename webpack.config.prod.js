@@ -26,7 +26,9 @@ module.exports = {
         clients: path.resolve(root, 'assets/images/clients.svg'),
         lowprice: path.resolve(root, 'assets/images/lowprice.svg'),
         schedule: path.resolve(root, 'assets/images/schedule.svg'),
-        includebackground: path.resolve(root, 'assets/images/includebackground.jpg')
+        includebackground: path.resolve(root, 'assets/images/includebackground.jpg'),
+        slick: path.resolve(root, 'assets/common/slick.min.css'),
+        slicktheme: path.resolve(root, 'assets/common/slick-theme.min.css')
         /*flower: path.resolve(root, 'assets/img/flowers.png'),
         paint: path.resolve(root, 'assets/img/paint.png'),
         loading: path.resolve(root, 'assets/img/loading.png')*/
@@ -36,7 +38,7 @@ module.exports = {
         filename: '[name].js'
     },
 
-    watch: false,
+    watch: true,
 
     module: {
         loaders: [
@@ -57,8 +59,12 @@ module.exports = {
                 loader: 'file-loader?name=images/[name].[ext]'
             },
             {
-                test: /\.(eot|ttf|woff|woff2)$/,
+                test: /\.(eot|ttf|woff|woff2|otf)$/,
                 loader: 'file-loader?name=fonts/[name].[ext]'
+            },
+            {
+                test: /\.(css)$/,
+                loader: 'file-loader?name=common/[name].[ext]'
             }
         ]
     },

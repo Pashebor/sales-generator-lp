@@ -3,7 +3,7 @@ $header-text-color: rgb(255, 255, 255);
 .header{
   background-color: rgb(25, 25, 25);
   &__content{
-    padding: 137px 0 0 0;
+    padding: 50px 0 0 0;
     text-shadow: rgba(0, 0, 0, 0.5) 1px 3px 2px;
     &-title{
       font-size: 40px;
@@ -28,7 +28,8 @@ $header-text-color: rgb(255, 255, 255);
 
 .header-content-background{
   background-size: cover;
-  background: url("../images/headerbackground.jpg") no-repeat center center;
+  background: url("../images/headerbackground.png") no-repeat 80% 100%;
   color: $header-text-color;
+  background-color: black;
 }
 

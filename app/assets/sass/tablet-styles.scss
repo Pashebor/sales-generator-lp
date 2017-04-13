@@ -39,6 +39,9 @@
         font-size: 25px;
       }
     }
+    &-content-background{
+      background: url("../images/headerbackground.png") no-repeat 30% 100%;
+    }
   }
 
   .know-form{
@@ -90,6 +93,12 @@
 
   .popup-overlay .popup-form{
     width: 70%;
+  }
+
+  .popup-slider-overlay{
+    .popup-slider{
+      width: 75%;
+    }
   }
 
 }

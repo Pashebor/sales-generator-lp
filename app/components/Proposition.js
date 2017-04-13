@@ -14,14 +14,14 @@ class Proposition extends Component{
                         <div className="proposition-block__item">
                             <p>Только ДО КОНЦА НЕДЕЛИ</p>
                             <p>Стоимость профессионального аудита сайта составит:</p>
-                            <p>10 000</p>
-                            <p>4 900</p>
+                            <p>16 500</p>
+                            <p>9 900</p>
                             <p>рублей</p>
                         </div>
                         <div className="proposition-block__item">
                             <p>Успейте получить</p>
                             <p>профессиональный аудит сайта</p>
-                            <p>со скидкой <span>50%</span></p>
+                            <p>со скидкой <span>40%</span></p>
                             <form className="form-group">
                                 <label>Имя</label>
                                 <input id="name" name="phone" type="text" className="form-control"/>

@@ -33,6 +33,11 @@
 
   &--callback{
     margin-left: auto;
+    border-width: 2px;
+    padding: 10px 25px;
+    height: 44px;
+    border-radius: 5px;
+    line-height: 20px;
   }
 }
 
@@ -41,8 +46,8 @@
   flex-flow: row;
   width: 50%;
   &__title{
-    font-size: 16px;
-    margin: 35px 0 25px 0;
+    font-size: 18px;
+    margin: 55px 0 25px 0;
   }
 
   input[type="text"]{
@@ -64,7 +69,7 @@
   }
 }
 .separatorbottom{
-  background:rgb(245, 245, 245);
+  /*background:rgb(245, 245, 245);*/
   width:100%;
   height:120px;
   overflow:hidden;
