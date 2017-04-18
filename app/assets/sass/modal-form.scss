@@ -71,10 +71,11 @@
     width: 60%;
     &__close{
       position: absolute;
-      top: 0px;
+      z-index:1;
+      top: -10px;
       right: 10px;
       transition: all 200ms;
-      font-size: 30px;
+      font-size: 50px;
       font-weight: bold;
       text-decoration: none;
       color: rgb(199, 29, 26);
@@ -130,7 +131,7 @@
 }
 /**************/
 
-@media screen and (min-width: 1200px) and (max-width: 1500px){
+@media screen and (min-width: 1367px) and (max-width: 1500px){
   .popup-overlay {
   .popup-form{
     input[type="submit"] {
@@ -139,6 +140,27 @@
   }
     .popup-fullcase{
       width: 70%;
+    }
+  }
+
+  .popup-slider-overlay{
+    .popup-slider{
+      width: 50%;
+    }
+  }
+
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1366px){
+  .popup-overlay {
+    .popup-form{
+      input[type="submit"] {
+        width: 70%;
+      }
+    }
+    .popup-fullcase{
+      width: 70%;
+      top: 25px;
     }
   }
 

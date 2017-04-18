@@ -9,7 +9,8 @@ class IncludeAudit extends Component{
         this.props.showModal(true);
     }
     showSliderHandler() {
-        this.props.openSlider(true);
+        let array = ['images/1.jpg', 'images/2.jpg', 'images/3.jpg', 'images/4.jpg'];
+        this.props.openSlider(array ,true);
     }
     render() {
     return(

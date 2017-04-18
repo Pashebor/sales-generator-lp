@@ -171,4 +171,11 @@
       }
     }
   }
+
+  .popup-overlay .popup-fullcase{
+    width: 98%;
+    &__close{
+      font-size: 35px;
+    }
+  }
 }

@@ -33,14 +33,30 @@ class Result extends Component{
             speed: 500,
             slidesToShow: 2,
             slidesToScroll: 1,
-            dragging: false
+            lazyLoad: false,
+            draggable: true,
+            responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    infinite: true
+                }
+            }, {
+
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    dots: false,
+                    arrows: false
+                }
+            }]
         };
     return(
         <section className="results">
             <div className="zigzag-bottom">
                 <div className="container">
                     <h2 className="results__title">Результаты сайтов после внедрения наших рекомендаций</h2>
-                    <p className="results__subtitle">Более <span>1500 сайтов</span> улучшили свои показатели благодаря нашему аудиту</p>
+                    <p className="results__subtitle">Более <span>879 сайтов</span> улучшили свои показатели благодаря нашему аудиту</p>
                     <Slider {...settings}>
                     <div>
                     <div className="results-info__row">
@@ -51,13 +67,29 @@ class Result extends Component{
                     </div>
                     </div>
                     <div>
-                        <div className="results-info__row">
+                      <div className="results-info__row">
                         <div className="results-info__column">
                             <div className="results-info__column__item"><img ref="image3" src="images/pansionat.jpg" alt="График роста сайта Пансионат Осень" title="График роста сайта Пансионат Осень" onClick={this.caseClickHandler.bind(this)}/></div>
                             <div className="results-info__column__item"><img ref="image4" src="images/dejure.jpg" alt="График роста сайта De Jure De Facto" title="График роста сайта De Jure De Facto" onClick={this.caseClickHandler.bind(this)}/></div>
                         </div>
-                        </div>
+                      </div>
                     </div>
+                        <div>
+                            <div className="results-info__row">
+                                <div className="results-info__column">
+                                    <div className="results-info__column__item"><img ref="image5" src="images/santech.jpg" alt="График роста сайта Пансионат Осень" title="График роста сайта Пансионат Осень" onClick={this.caseClickHandler.bind(this)}/></div>
+                                    <div className="results-info__column__item"><img ref="image6" src="images/bussines-resuourse.jpg" alt="График роста сайта De Jure De Facto" title="График роста сайта De Jure De Facto" onClick={this.caseClickHandler.bind(this)}/></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="results-info__row">
+                                <div className="results-info__column">
+                                    <div className="results-info__column__item"><img ref="image7" src="images/word-deal.jpg" alt="График роста сайта Пансионат Осень" title="График роста сайта Пансионат Осень" onClick={this.caseClickHandler.bind(this)}/></div>
+                                    <div className="results-info__column__item"><img ref="image8" src="images/veronica.jpg" alt="График роста сайта De Jure De Facto" title="График роста сайта De Jure De Facto" onClick={this.caseClickHandler.bind(this)}/></div>
+                                </div>
+                            </div>
+                        </div>
                     </Slider>
                 </div>
             </div>

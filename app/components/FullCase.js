@@ -21,10 +21,43 @@ class FullCase extends Component{
     }
 
     isUri() {
-        if (this.props.formState.caseUri) {
-            for (let i = 0; i < this.props.formState.caseUri.length; i++) {
-                return this.props.formState.caseUri[i];
-            }
+        console.log(this.props.formState.caseUri);
+        if (this.props.formState.caseUri && this.props.formState.fullCase) {
+            const settings = {
+                dots: false,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 1,
+                        infinite: true
+                    }
+                }, {
+
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        dots: false,
+                        arrows: false
+                    }
+                }]
+            };
+
+            return(
+                <Slider {...settings}>
+                     <div><img src={this.props.formState.caseUri[0]}/></div>
+                     <div><img src={this.props.formState.caseUri[1]}/></div>
+                     <div><img src={this.props.formState.caseUri[2]}/></div>
+                     <div><img src={this.props.formState.caseUri[3]}/></div>
+                     <div><img src={this.props.formState.caseUri[4]}/></div>
+                     <div><img src={this.props.formState.caseUri[5]}/></div>
+                     <div><img src={this.props.formState.caseUri[6]}/></div>
+                     <div><img src={this.props.formState.caseUri[7]}/></div>
+                </Slider>
+            )
         }
     }
 
@@ -33,10 +66,10 @@ class FullCase extends Component{
     }
     render() {
         return(
-            <section className="popup-overlay" style={this.isShow()} onClick={this.closeFullcaseHandler.bind(this)}>
+            <section className="popup-overlay" style={this.isShow()}>
                 <div className="popup-fullcase">
                     <div className="popup-fullcase__close" onClick={this.closeFullcaseHandler.bind(this)}>&times;</div>
-                    <img src={this.isUri()}/>
+                    {this.isUri()}
                 </div>
             </section>
         )

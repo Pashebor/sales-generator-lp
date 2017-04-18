@@ -2,6 +2,7 @@
 export const GET_MODAL_FORM = 'showModal';
 export const OPEN_FULL_CASE = 'openCase';
 export const OPEN_SLIDER = 'openSlider';
+
 /*ACTIONS*/
 
 export const showModal = (logicValue) => {
@@ -19,9 +20,10 @@ export const openCase = (uri, logicValue) => {
     }
 };
 
-export const openSlider = (logicValue) => {
+export const openSlider = (uri,logicValue) => {
    return {
        type: OPEN_SLIDER,
+       payload: uri,
        show: logicValue
    }
 };

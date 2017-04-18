@@ -13,11 +13,9 @@ const salesReducer =  ( state = initialState, action) => {
         case GET_MODAL_FORM:
             return Object.assign({}, state, {modalShow: action.show});
         case OPEN_FULL_CASE:
-            console.log(state);
             return Object.assign({}, state, {caseUri: action.payload, fullCase: action.show});
         case OPEN_SLIDER:
-            console.log(state.slider);
-            return Object.assign({}, state, {slider: action.show});
+            return Object.assign({}, state, {caseUri: action.payload, slider: action.show});
         default: return state;
     }
 };

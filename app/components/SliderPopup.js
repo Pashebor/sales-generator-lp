@@ -21,32 +21,57 @@ class SliderPopup extends Component {
 
     closeSliderHandler(e) {
         e.stopPropagation();
-        this.props.openSlider(false);
+        this.props.openSlider('',false);
     }
 
     sliderClickHandler(e){
         e.stopPropagation();
         this.props.openSlider(true);
     }
+
+    showSlider() {
+        if(this.props.formState.caseUri && this.props.formState.slider) {
+            const settings = {
+                dots: false,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dragging: false,
+                responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 1,
+                        infinite: true
+                    }
+                }, {
+
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        dots: false,
+                        arrows: false
+                    }
+                }]
+            };
+            return(
+                <Slider {...settings} >
+                    <div><img src={this.props.formState.caseUri[0]}/></div>
+                    <div><img src={this.props.formState.caseUri[1]}/></div>
+                    <div><img src={this.props.formState.caseUri[2]}/></div>
+                    <div><img src={this.props.formState.caseUri[3]}/></div>
+                </Slider>
+            )
+        }
+    }
+
     render() {
-        const settings = {
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            dragging: false
-        };
+
         return(
             <section className="popup-slider-overlay" style={this.isOpen()} >
                 <div className="popup-slider">
                     <div className="popup-slider__close" onClick={this.closeSliderHandler.bind(this)}>&times;</div>
-                    <Slider {...settings} >
-                        <div><img src="images/1.jpg"/></div>
-                        <div><img src="images/2.jpg"/></div>
-                        <div><img src="images/3.jpg"/></div>
-                        <div><img src="images/4.jpg"/></div>
-                    </Slider>
+                    {this.showSlider()}
                 </div>
             </section>
         )
