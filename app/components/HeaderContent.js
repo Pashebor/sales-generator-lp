@@ -18,8 +18,7 @@ class HeaderContent extends Component{
                         </form>
                     </div>
                     <div className="separatorbottom">
-                        <div className="bigcircle-bottom">
-                        </div>
+                        <div className="bigcircle-bottom"></div>
                     </div>
                 </div>
             </section>
