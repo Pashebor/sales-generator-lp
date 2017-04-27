@@ -79,10 +79,22 @@
     }
   }
 
-  .proposition-block__item:last-child{
-    form{
-      .btn{
-        white-space: normal;
+  .proposition{
+    &-block{
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      &__item{
+        margin-top: 20px;
+        width: 85%;
+        .btn{
+          white-space: normal;
+        }
+      }
+      &__item:last-child{
+        form{
+          width: 90%;
+        }
       }
     }
   }

@@ -346,7 +346,7 @@
     }
   }
   .zigzag-bottom{
-    margin: 0 0 32px;
+    margin: 0 0 0 0;
     padding: 3px 0;
     &::after{
       background:
@@ -362,13 +362,12 @@
       height: 61px;
 
       position: relative;
-      top:64px;
+      top:30px;
       left:0px;
     }
   }
   &__title{
     @extend .audit__title;
-    font-size: 32px;
     margin-top: 50px;
   }
   &__subtitle{
@@ -421,73 +420,137 @@
   background-repeat: repeat;
   background-image: url("../images/sheetbackground.png");*/
   &__title{
-    margin-top: 120px;
+    margin-top: 100px;
     @extend .audit__title;
-    color: rgb(150, 22, 19);
+    color: #474747;
   }
   &-block{
     display: flex;
     flex-flow: row;
+    justify-content: space-around;
     &__item{
-      margin-top: 50px;
-      width: 49%;
+      margin-top: 20px;
+      width: 30%;
       text-align: center;
-      &:first-child{
-      p:first-child{
-        font-size: 36px;
-        font-family: $headers-font-regular;
+      &-wrapper{
+        border: 2px solid rgb(204, 204, 204);
+        border-radius: 10px;
+        color: rgb(51, 51, 51);
+        padding: 5px;
       }
-      p:nth-child(2){
-        font-family: $headers-font-bold;
-        font-size: 18px;
+    .title{
+      font-family: $headers-font-bold;
+      font-size: 26px;
+      text-align: center;
+      line-height: 72px;
+      color: white;
+      text-transform: uppercase;
+      margin: 0;
+      &-block{
+        background: url(../images/includebackground.jpg) no-repeat;
+        background-size: cover;
       }
-      p:nth-child(3){
-        font-family: $headers-font-bold;
-        text-decoration: line-through;
-        color: rgb(199, 29, 26);
-        font-size: 36px;
-      }
-      p:nth-child(4){
-        position: relative;
-        top: -25px;
-        font-family: $headers-font-bold;
-        color: #61bd70;
-        font-size: 104px;
-      }
-      p:last-child{
-        font-family: $headers-font-regular;
-        font-size: 28px;
-        position: relative;
-        top: -65px;
+      &-fade{
+        background-color: rgba(25, 25, 25, 0.592157);
       }
     }
-    &:last-child{
-      form{
-        width: 70%;
-        text-align: left;
-        margin: auto;
-        .btn{
-          display: block;
-          margin: 20px auto 0 auto;
-        }
-        input[type="text"] {
-          border-width: 2px;
-          padding: 10px 12px;
-          height: 44px;
-          border-radius: 5px;
-          line-height: 20px;
-        }
-      }
-      p{
-        font-size: 22px;
+    .rate{
+      margin: 25px 0 0 0;
+      &__plus{
+        font-family: $headers-font-bold;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-bottom: -20px;
         span{
-          color: #61bd70;
-          font-family: $headers-font-regular;
-          font-weight: 600;
+          font-size: 35px;
+          position: relative;
+          top: -15px;
+        }
+      }
+      &__text{
+        font-family: $headers-font-regular;
+        font-size: 15px;
+        color: rgb(38, 38, 38);
+        text-align: left;
+        margin-bottom: 2px;
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        &--plus{
+          position: relative;
+          &::before{
+            font-family: FontAwesome;
+            content: '\f055';
+            font-size: 27px;
+            color: rgb(92, 184, 96);
+            margin-left: 5px;
+            display: block;
+            width: 23px;
+            height: 23px;
+            line-height: 23px;
+            border-radius: 50%;
+            background-color: white;
+            position: relative;
+            top: -5px;
+            margin-right: 10px;
+          }
+        }
+        img{
+          width: 23px;
+          margin: -10px 10px 0 5px;
+        }
+      }
+      &__time{
+        margin-top: 7px;
+        margin-bottom: 10px;
+        font-family: $headers-font-bold;
+        color: rgb(51, 51, 51);
+        background-color: rgba(25, 25, 25, 0.0392157);
+        font-size: 15px;
+        position: relative;
+        width: 103%;
+        right: 5px;
+        span{
+          color: rgb(68, 157, 72);
+          font-size: 18px;
         }
       }
     }
+      .price{
+        margin: 15px 0 15px 0;
+        &__discount{
+          &-header{
+            font-family: $headers-font-regular;
+            color: rgb(38, 38, 38);
+            font-size: 18px;
+          }
+          &-oldprice{
+            font-family: $headers-font-regular;
+            text-decoration: line-through;
+            font-size: 22px;
+            margin: 0;
+          }
+        }
+        &__text{
+          margin: 0 0 15px;
+          font-family: $headers-font-regular;
+          font-size: 28px;
+          color: black;
+        }
+        .btn{
+          font-family: $primary-font;
+          padding: 10px 35px;
+          white-space: normal;
+        }
+      }
    }
+    &__item:nth-child(2){
+      .title{
+        &-fade{
+          background-color: rgba(111, 192, 113, 0.690196);
+        }
+      }
+    }
   }
 }
 /*Proposition block END*/

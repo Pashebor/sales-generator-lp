@@ -124,14 +124,14 @@
       &__item{
         margin-top: 20px;
         width: 100%;
-      }
-      &__item:last-child{
-        margin-top: -40px;
-        form{
-          width: 90%;
-        }
         .btn{
           white-space: normal;
+          width: 80%;
+        }
+      }
+      &__item:last-child{
+        form{
+          width: 90%;
         }
       }
     }

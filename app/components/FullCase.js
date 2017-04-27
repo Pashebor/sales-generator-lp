@@ -21,7 +21,6 @@ class FullCase extends Component{
     }
 
     isUri() {
-        console.log(this.props.formState.caseUri);
         if (this.props.formState.caseUri && this.props.formState.fullCase) {
             const settings = {
                 dots: false,

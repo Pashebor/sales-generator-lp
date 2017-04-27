@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {showModal} from '../actions/index';
+import {showModal, sendCallback} from '../actions/index';
 import { bindActionCreators } from 'redux';
 
 class ModalForm extends Component{
@@ -17,6 +17,16 @@ class ModalForm extends Component{
             };
         }
     }
+
+    btnSubmitHandler(e) {
+        e.preventDefault();
+        let formData = {};
+        for (let field in this.refs) {
+            formData[field] = this.refs[field].value;
+        }
+        this.props.sendCallback(formData);
+    }
+
     closeModalHandler(e) {
         e.stopPropagation();
         this.props.showModal(false);
@@ -33,11 +43,11 @@ class ModalForm extends Component{
               <div className="popup-form">
                   <div className="popup-form__close" onClick={this.closeModalHandler.bind(this)}>&times;</div>
                   <p>Оформление заявки</p>
-                  <form action="" className="form-group" onClick={this.formClickHandler.bind(this)}>
-                      <label>Во сколько вам позвонить?</label>
-                      <input type="text" name="callback" className="form-control"/>
+                  <form className="form-group" onClick={this.formClickHandler.bind(this)} onSubmit={this.btnSubmitHandler.bind(this)}>
+                      <label>Во сколько Вам позвонить?</label>
+                      <input type="text" ref="callback" name="callback" className="form-control"/>
                       <label>Телефон <span>*</span></label>
-                      <input type="text" name="" required="true" className="form-control"/>
+                      <input type="text" ref="phone" name="phone" required="true" className="form-control"/>
                       <input type="submit" value='Отправить заявку!' className="btn"/>
                   </form>
               </div>
@@ -53,7 +63,7 @@ const mapStateToProps = (store) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({showModal}, dispatch);
+    return bindActionCreators({showModal, sendCallback}, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalForm);

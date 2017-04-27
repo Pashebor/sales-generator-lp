@@ -8,7 +8,7 @@ class HeaderContent extends Component{
             <section className="header-content-background">
                 <div className="content--background">
                     <div className="container header__content">
-                        <h2 className="header__content-title">Профессиональный аудит сайта за <span>72 часа</span></h2>
+                        <h2 className="header__content-title">Профессиональный аудит сайта <span>за 72 часа</span></h2>
                         <p className="header__content-text">Позволит увеличить число клиентов в несколько раз</p>
                         <p className="header__content-text">с помощью наших рекомендаций по 47 критериям</p>
                         <h5 className="know-form__title">Узнайте, сколько новых клиентов Вы можете получить с сайта!</h5>

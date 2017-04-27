@@ -17,7 +17,7 @@ class YouSiteAudit extends Component{
                         <div className="audit-info__item">
                             <img src="images/schedule.svg" alt="Позиции" title="Поднять позиции" onClick={this.callPopupHandler.bind(this)}/>
                             <h4>Поднять позиции</h4>
-                            <p>в поисовых системах</p>
+                            <p>в поисковых системах</p>
                         </div>
                         <div className="audit-info__item">
                             <img src="images/clients.svg" alt="Позиции" title="Поднять позиции" onClick={this.callPopupHandler.bind(this)}/>
