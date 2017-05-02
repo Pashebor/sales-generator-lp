@@ -19,6 +19,7 @@ class FullCase extends Component{
             };
         }
     }
+    
 
     isUri() {
         if (this.props.formState.caseUri && this.props.formState.fullCase) {

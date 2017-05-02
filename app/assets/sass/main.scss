@@ -368,7 +368,6 @@
   }
   &__title{
     @extend .audit__title;
-    font-size: 32px;
     margin-top: 50px;
   }
   &__subtitle{
@@ -473,17 +472,37 @@
         font-size: 15px;
         color: rgb(38, 38, 38);
         text-align: left;
-        margin-bottom: 15px;
+        margin-bottom: 2px;
         display: flex;
         flex-flow: row;
         align-items: center;
+        &--plus{
+          position: relative;
+          &::before{
+            font-family: FontAwesome;
+            content: '\f055';
+            font-size: 27px;
+            color: rgb(92, 184, 96);
+            margin-left: 5px;
+            display: block;
+            width: 23px;
+            height: 23px;
+            line-height: 23px;
+            border-radius: 50%;
+            background-color: white;
+            position: relative;
+            top: -5px;
+            margin-right: 10px;
+          }
+        }
         img{
           width: 23px;
-          margin: -10px 15px 0 0;
+          margin: -10px 10px 0 5px;
         }
       }
       &__time{
-        margin-top: 15px;
+        margin-top: 7px;
+        margin-bottom: 10px;
         font-family: $headers-font-bold;
         color: rgb(51, 51, 51);
         background-color: rgba(25, 25, 25, 0.0392157);
@@ -506,13 +525,14 @@
             font-size: 18px;
           }
           &-oldprice{
-            font-family: $headers-font-bold;
+            font-family: $headers-font-regular;
             text-decoration: line-through;
-            font-size: 28px;
+            font-size: 22px;
+            margin: 0;
           }
         }
         &__text{
-          margin: 15px 0;
+          margin: 0 0 15px;
           font-family: $headers-font-regular;
           font-size: 28px;
           color: black;
@@ -520,6 +540,7 @@
         .btn{
           font-family: $primary-font;
           padding: 10px 35px;
+          white-space: normal;
         }
       }
    }
@@ -533,6 +554,12 @@
   }
 }
 /*Proposition block END*/
+
+
+.submit-btn{
+  padding: 0 28px !important;
+  margin-left: 15px !important;
+}
 
 @media screen and (min-width: 1501px){
   .header{

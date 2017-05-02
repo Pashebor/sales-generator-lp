@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import {showModal, openSlider} from '../actions/index';
+import {showModal, openSlider, setTypeRate} from '../actions/index';
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
 
 
 class IncludeAudit extends Component{
     showModalHandler(){
+        this.props.setTypeRate('');
         this.props.showModal(true);
     }
     showSliderHandler() {
@@ -50,7 +51,7 @@ const mapStateToProps = (store) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({showModal, openSlider}, dispatch);
+    return bindActionCreators({showModal, openSlider, setTypeRate}, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(IncludeAudit);

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import {showModal} from '../actions/index';
+import {showModal, setTypeRate} from '../actions/index';
 import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux';
 
 
 class NavBar extends Component{
     openModalHandler() {
+        this.props.setTypeRate('');
         this.props.showModal(true);
     }
     render() {
@@ -28,7 +29,7 @@ const mapStateToProps = (store) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({showModal}, dispatch);
+    return bindActionCreators({showModal, setTypeRate}, dispatch);
 };
 
 export default  connect(mapStateToProps, mapDispatchToProps)(NavBar);
