@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {showModal, sendCallback} from '../actions/index';
+import {showModal, sendCallback, nullCallbacks} from '../actions/index';
 import { bindActionCreators } from 'redux';
+import MaskedInput from 'react-maskedinput';
 
 class ModalForm extends Component{
     isShow() {
@@ -18,18 +19,56 @@ class ModalForm extends Component{
         }
     }
 
+    mailNotification() {
+        let response = this.props.formState.responseJson;
+        let notification = (resp) => {
+            switch (resp.response) {
+                case true:
+                    return <h5 className="popup-form__notification">Ваша заявка принята, с Вами свяжется наш менеджер</h5>;
+                    break;
+                case false:
+                    return <h5 className="popup-form__notification popup-form__notification--error">Произошла ошибка отправки письма</h5>;
+                    break;
+            }
+        };
+
+        if (response) {
+         return notification(response);
+        } else {
+            return false;
+        }
+    }
+
     btnSubmitHandler(e) {
         e.preventDefault();
-        let formData = {};
-        for (let field in this.refs) {
-            formData[field] = this.refs[field].value;
+        if (!this.props.formState.typeRate && !this.props.formState.auditType) {
+            let formData = {'form-name': 'callback'};
+            for (let field in this.refs) {
+                formData[field] = this.refs[field].mask.getValue();
+            }
+            this.props.sendCallback(formData);
+        } else if(this.props.formState.typeRate && !this.props.formState.auditType) {
+            let formData = {'form-name': 'rates', 'rate': this.props.formState.typeRate};
+            for (let field in this.refs) {
+                formData[field] = this.refs[field].mask.getValue();
+            }
+            this.props.sendCallback(formData);
+        } else if(!this.props.formState.typeRate && this.props.formState.auditType) {
+            let formData = {'form-name': 'audits', 'type': this.props.formState.auditType};
+            for (let field in this.refs) {
+                formData[field] = this.refs[field].mask.getValue();
+            }
+            this.props.sendCallback(formData);
         }
-        this.props.sendCallback(formData);
     }
 
     closeModalHandler(e) {
         e.stopPropagation();
+        for (let fieldClear in this.refs) {
+            this.refs[fieldClear].mask.setValue('');
+        }
         this.props.showModal(false);
+        this.props.nullCallbacks(null, null);
     }
 
     formClickHandler(e){
@@ -43,11 +82,12 @@ class ModalForm extends Component{
               <div className="popup-form">
                   <div className="popup-form__close" onClick={this.closeModalHandler.bind(this)}>&times;</div>
                   <p>Оформление заявки</p>
+                  {this.mailNotification()}
                   <form className="form-group" onClick={this.formClickHandler.bind(this)} onSubmit={this.btnSubmitHandler.bind(this)}>
                       <label>Во сколько Вам позвонить?</label>
-                      <input type="text" ref="callback" name="callback" className="form-control"/>
+                      <MaskedInput  mask="11:11"type="text" ref="callback" name="callback" className="form-control"/>
                       <label>Телефон <span>*</span></label>
-                      <input type="text" ref="phone" name="phone" required="true" className="form-control"/>
+                      <MaskedInput  mask="+7(111) 111 11 11" type="text" ref="phone" name="phone" required="true" className="form-control"/>
                       <input type="submit" value='Отправить заявку!' className="btn"/>
                   </form>
               </div>
@@ -63,7 +103,7 @@ const mapStateToProps = (store) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({showModal, sendCallback}, dispatch);
+    return bindActionCreators({showModal, sendCallback, nullCallbacks}, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalForm);

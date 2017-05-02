@@ -5,6 +5,10 @@ export const GET_MODAL_FORM = 'showModal';
 export const OPEN_FULL_CASE = 'openCase';
 export const OPEN_SLIDER = 'openSlider';
 export const SEND_MESSAGE_SUCCESS = 'sendRequestCallback';
+export const SEND_CLIENTS_SUCCESS = 'knowClients';
+export const RATE_TYPE = 'setTypeRate';
+export const AUDITS_REQUEST = 'setTypeAudit';
+export const NULL_CALLBACKS = 'nullCallbacks';
 /*ACTIONS*/
 
 export const showModal = (logicValue) => {
@@ -30,6 +34,28 @@ export const openSlider = (uri,logicValue) => {
    }
 };
 
+export const setTypeRate = type => {
+    return{
+        type: RATE_TYPE,
+        payload: type
+    }    
+};
+
+export const setTypeAudit = type => {
+    return{
+        type: AUDITS_REQUEST,
+        payload: type
+    }
+};
+
+export const nullCallbacks = (val1, val2) => {
+   return{
+       type: NULL_CALLBACKS,
+       valOne: val1,
+       valTwo: val2
+   }
+};
+
 /*ASYNC ACTIONS*/
 
 export const sendRequestCallback = (response) => {
@@ -39,9 +65,27 @@ export const sendRequestCallback = (response) => {
     }
 };
 
+export const knowClients = (response) => {
+    return {
+        type: SEND_CLIENTS_SUCCESS,
+        payload: response
+    }
+};
+
+
+export const sendClientsCallback = formData => {
+    return dispatch => {
+        return requestCallback('./send_mail.php', formData)
+            .then(json => {
+                dispatch(knowClients(json));
+            })
+            .catch(err => console.log('error'));
+    }
+};
+
 export const sendCallback = formData => {
     return dispatch => {
-        return requestCallback('http://localhost/sales-generator-lp/build/send_mail.php', formData)
+        return requestCallback('./send_mail.php', formData)
             .then(json => {
                 dispatch(sendRequestCallback(json));
             })

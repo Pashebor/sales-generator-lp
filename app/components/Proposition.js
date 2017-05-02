@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import {showModal} from '../actions/index';
+import {showModal, setTypeRate} from '../actions/index';
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
 
 class Proposition extends Component{
-    openModalHandler() {
+    openModalHandler(event) {
+        this.props.setTypeRate(event.target.getAttribute('data-rate'));
         this.props.showModal(true);
     }
     render() {
@@ -22,13 +23,13 @@ class Proposition extends Component{
                             </header>
                             <main className="rate">
                                 <div className="rate__text"><img src="images/check.svg"/><p>Анализ источников трафика и их эффективности</p></div>
-                                <div className="rate__text"><img src="images/check.svg"/><p>Рекомендации по устранению обноруженных технических проблем</p></div>
+                                <div className="rate__text"><img src="images/check.svg"/><p>Рекомендации по устранению обнаруженных технических проблем</p></div>
                                 <div className="rate__text"><img src="images/check.svg"/><p>Предложения по улучшению юзабилити и повышению конверсии</p></div>
                                 <div className="rate__time">Срок выполнения: <span>5</span> дней</div>
                             </main>
                             <footer className="price">
                                 <p className="price__text">4 900 р.</p>
-                                <button className="btn" onClick={this.openModalHandler.bind(this)}>Заказать аудит</button>
+                                <button className="btn" data-rate="Базовый" onClick={this.openModalHandler.bind(this)}>Заказать аудит</button>
                             </footer>
                           </div>
                         </div>
@@ -55,7 +56,7 @@ class Proposition extends Component{
                                     <p className="price__discount-oldprice">19 990 р.</p>
                                 </div>
                                 <p className="price__text">9 900 р.</p>
-                                <button className="btn" onClick={this.openModalHandler.bind(this)}>Заказать аудит со скидкой</button>
+                                <button className="btn" data-rate="Оптимальный" onClick={this.openModalHandler.bind(this)}>Заказать аудит со скидкой</button>
                             </footer>
                           </div>
                         </div>
@@ -70,7 +71,7 @@ class Proposition extends Component{
                                 <div className="rate__plus">
                                     <p>Оптимальный <br/> <span>+</span></p>
                                 </div>
-                                <div className="rate__text"><img src="images/check.svg"/><p>Анализ внешней и внутренней оптимизации сайта</p></div>
+                                <div className="rate__text"><img src="images/check.svg"/><p>Выявление ошибок, мешающих выводу сайта в ТОП поисковых систем</p></div>
                                 <div className="rate__text"><img src="images/check.svg"/><p>Глубокий анализ потенциала Вашего сайта для дальнейшего продвижения</p></div>
                                 <div className="rate__text"><img src="images/check.svg"/><p>Полное и четкое понимание того, в каком состоянии находится Ваш сайт сейчас</p></div>
                                 <div className="rate__text"><img src="images/check.svg"/><p>Список действий, которые дадут максимальный эффект в кратчайшие сроки</p></div>
@@ -79,7 +80,7 @@ class Proposition extends Component{
                             </main>
                             <footer className="price">
                                 <p className="price__text">29 900 р.</p>
-                                <button className="btn" onClick={this.openModalHandler.bind(this)}>Заказать аудит</button>
+                                <button className="btn" data-rate="Премиум" onClick={this.openModalHandler.bind(this)}>Заказать аудит</button>
                             </footer>
                           </div>
                         </div>
@@ -100,7 +101,7 @@ const mapStateToProps = (store) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({showModal}, dispatch);
+    return bindActionCreators({showModal, setTypeRate}, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Proposition);

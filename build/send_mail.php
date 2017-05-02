@@ -12,21 +12,47 @@ require ('./phpmailer/PHPMailerAutoload.php');
  $mail->CharSet = 'UTF-8';
 
  $mail->From = 'pashebor@mail.ru';
- $mail->FromName = 'Ahinilation';
- $mail->addAddress('pashebor@gmail.com', 'Уничтожь меня');
+ $mail->FromName = 'Генератор продаж';
+ $mail->addAddress('pashebor@gmail.com', 'Генератор продаж');
+ $mail->addAddress('info@salesgenerator.pro', 'Генератор продаж');
+ $mail->addAddress('pm@salesgenerator.pro', 'Генератор продаж');
+ $mail->addAddress('vip@salesgenerator.pro', 'Генератор продаж');
  $mail->isHtml(true);
- $mail->Subject = 'I will eat you!!!';
- $mail->Body = '<p>Ваш отзыв опубликован на сайте!</p><a href="http://уничтожьменя.рф/reviews.php"><b>ССЫЛКА</b></a>';
- /*if ($mail->send()) {
-     echo 'ok';
- } else {
-     echo error_reporting(E_ALL);
- }*/
+
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $idToDel = $_POST["formData"];
     /*$requestCallback = preg_replace('/(\w+)\s{0,1}:/', '"\1":', str_replace(array("\r\n", "\r", "\n", "\t"), "", $idToDel))*/;
-    $arr = json_decode($idToDel, true);
-    echo json_encode($arr['phone']);
+    $arrRequest = json_decode($idToDel, true);
+    if (!empty($arrRequest)) {
+     switch ($arrRequest['form-name']) {
+      case 'callback':
+       $mail->Subject = 'Заказ аудита - обратный звонок';
+       $mail->Body = '<div><p>Время звонка: '.$arrRequest['callback'].'</p><p>Номер телефона: '.$arrRequest['phone'].'</p></div>';
+       $mail->send();
+       echo json_encode(["response" => true]);
+             break;
+      case 'know':
+       $mail->Subject = 'Заказ аудита - первый экран';
+       $mail->Body = '<div><p>Номер телефона: '.$arrRequest['phone'].'</p></div>';
+       $mail->send();
+       echo json_encode(["response" => true]);
+             break;
+       case 'rates':
+        $mail->Subject = 'Заказ аудита - тариф '.$arrRequest['rate'];
+        $mail->Body = '<div><p>Номер телефона: '.$arrRequest['phone'].'</p><p>Время звонка: '.$arrRequest['callback'].'</p><p>Тариф: '.$arrRequest['rate'].'</p></div>';
+        $mail->send();
+        echo json_encode(["response" => true]);
+             break;
+       case 'audits':
+        $mail->Subject = 'Заказ аудита - второй экран '.$arrRequest['rate'];
+        $mail->Body = '<div><p>Номер телефона: '.$arrRequest['phone'].'</p><p>Время звонка: '.$arrRequest['callback'].'</p><p>Тема: '.$arrRequest['type'].'</p></div>';
+        $mail->send();
+        echo json_encode(["response" => true]);
+             break;
+     }
+    } else {
+     echo json_encode(["response" => false]);
+    }
 }
 ?>

@@ -6429,7 +6429,7 @@ body {
     font-size: 18px;
     text-transform: uppercase;
     color: white;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: OpenSansBold;
     -ms-flex-item-align: start;
         align-self: flex-start;
     margin-left: 15px; }
@@ -6967,6 +6967,10 @@ body {
       background-color: rgba(111, 192, 113, 0.690196); }
 
 /*Proposition block END*/
+.submit-btn {
+  padding: 0 28px !important;
+  margin-left: 15px !important; }
+
 @media screen and (min-width: 1501px) {
   .header__content {
     padding: 180px 0 80px 0; } }
@@ -7036,6 +7040,18 @@ body {
     -webkit-animation: formBlockAnim 0.3s 1 linear;
             animation: formBlockAnim 0.3s 1 linear;
     z-index: 9999; }
+    .popup-overlay .popup-form__notification, .popup-slider-overlay .popup-form__notification {
+      text-align: center;
+      font-size: 20px;
+      color: white;
+      border: 1px solid #368142;
+      padding: 5px 6px;
+      background-color: #5cb860;
+      border-radius: 5px;
+      -webkit-animation: notifAnimation 0.3s 1 linear;
+              animation: notifAnimation 0.3s 1 linear; }
+      .popup-overlay .popup-form__notification--error, .popup-slider-overlay .popup-form__notification--error {
+        background-color: #e53835; }
     .popup-overlay .popup-form__close, .popup-slider-overlay .popup-form__close {
       position: absolute;
       top: 0px;
@@ -7211,6 +7227,18 @@ body {
   to {
     top: 100px; } }
 
+@-webkit-keyframes notifAnimation {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes notifAnimation {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 .btn {
   background-color: #61bd70;
   border-radius: 5px;
@@ -7252,6 +7280,13 @@ body {
   .know-form__title {
     font-size: 18px;
     margin: 55px 0 25px 0; }
+  .know-form__notification {
+    font-size: 20px;
+    color: #368142;
+    -webkit-animation: knowNotifAnimation 0.3s 1 linear;
+            animation: knowNotifAnimation 0.3s 1 linear; }
+    .know-form__notification--error {
+      color: #e53835; }
   .know-form input[type="text"] {
     width: 45%; }
   .know-form input[type="button"] {
@@ -7312,6 +7347,22 @@ body {
     background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%); }
 
+@-webkit-keyframes knowNotifAnimation {
+  from {
+    opacity: 0;
+    height: 0px; }
+  to {
+    opacity: 1;
+    height: auto; } }
+
+@keyframes knowNotifAnimation {
+  from {
+    opacity: 0;
+    height: 0px; }
+  to {
+    opacity: 1;
+    height: auto; } }
+
 @media screen and (min-width: 320px) and (max-width: 500px) {
   .btn--callback {
     margin-left: 0px; }
@@ -7352,10 +7403,10 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center; }
-    .know-form input[type="text"], .know-form input[type="button"] {
+    .know-form input[type="text"], .know-form input[type="button"], .know-form input[type="submit"] {
       width: 85%;
       margin-left: 0px; }
-    .know-form input[type="button"] {
+    .know-form input[type="button"], .know-form input[type="submit"] {
       margin: 20px 0 0 0; }
     .know-form__title {
       text-align: center; }
