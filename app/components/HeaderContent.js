@@ -13,8 +13,9 @@ class HeaderContent extends Component{
         for (let field in this.refs) {
             formData[field] = this.refs[field].mask.getValue();
         }
-        console.log(formData);
         this.props.sendClientsCallback(formData);
+        yaCounter44418460.reachGoal('KNOW');
+        return true;
     }
 
     clientsNotification() {

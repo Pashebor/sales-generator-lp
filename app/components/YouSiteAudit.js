@@ -7,6 +7,17 @@ class YouSiteAudit extends Component{
     callPopupHandler(event) {
         this.props.setTypeAudit(event.target.getAttribute('data-audit'));
         this.props.showModal(true);
+        switch (event.target.getAttribute('data-audit')) {
+            case 'Поднять позиции в поисковых системах':
+                yaCounter44418460.reachGoal('RAISE_POSITION'); return true;
+                break;
+            case 'Увеличить число новых клиентов':
+                yaCounter44418460.reachGoal('INCREASE'); return true;
+                break;
+            case 'Уменьшить стоимость привлечения клиентов':
+                yaCounter44418460.reachGoal('CUT_COST'); return true;
+                break;
+        }
     }
     render() {
         return(

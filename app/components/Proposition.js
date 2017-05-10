@@ -7,6 +7,21 @@ class Proposition extends Component{
     openModalHandler(event) {
         this.props.setTypeRate(event.target.getAttribute('data-rate'));
         this.props.showModal(true);
+        switch (event.target.getAttribute('data-rate')) {
+            case 'Базовый':
+                yaCounter44418460.reachGoal('ORDER_BASE');
+                return true;
+                break;
+            case 'Оптимальный':
+                yaCounter44418460.reachGoal('ORDER_OPTIMAL');
+                return true;
+                break;
+            case 'Премиум':
+                yaCounter44418460.reachGoal('ORDER_PREMIUM');
+                return true;
+                break;
+        }
+
     }
     render() {
         return(

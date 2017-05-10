@@ -8,6 +8,8 @@ class IncludeAudit extends Component{
     showModalHandler(){
         this.props.setTypeRate('');
         this.props.showModal(true);
+        yaCounter44418460.reachGoal('KNOW_AMOUNT');
+        return true;
     }
     showSliderHandler() {
         let array = ['images/1.jpg', 'images/2.jpg', 'images/3.jpg', 'images/4.jpg'];

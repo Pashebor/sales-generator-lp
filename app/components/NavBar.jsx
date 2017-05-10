@@ -9,7 +9,10 @@ class NavBar extends Component{
     openModalHandler() {
         this.props.setTypeRate('');
         this.props.showModal(true);
+        yaCounter44418460.reachGoal('CALL_BACK');
+        return true;
     }
+
     render() {
         return(
           <nav className="container nav">
