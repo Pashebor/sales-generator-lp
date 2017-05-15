@@ -3,8 +3,12 @@
    background-color: rgb(9, 9, 13);
    color: white;
   &__logo{
+    transition: all 0.3s ease-in-out;
     img{
       width: 200px;
+    }
+    &:hover{
+      transform: scale(1.05);
     }
   }
   &__phone{
@@ -22,7 +26,6 @@
   }
   @each $footer-item in (__logo,__address,__phone) {
     &#{$footer-item}{
-      width: 33%;
       text-align: center;
     }
   }
@@ -30,6 +33,6 @@
      margin-top: 80px;
      display: flex;
      flex-direction: row;
-     justify-content: space-around;
+     justify-content: space-between;
    }
 }

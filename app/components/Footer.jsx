@@ -9,7 +9,7 @@ const Footer = () => {
             </div>
             <div className="container">
               <div className="footer-container">
-                <div className="footer__logo"><img src="images/saleslogowhite.svg"  alt="Sales Generator logo"/></div>
+                <a href="http://sales-generator.ru"><div className="footer__logo"><img src="images/saleslogowhite.svg"  alt="Sales Generator logo"/></div></a>
                 <address className="footer__address">
                     <p>info@salesgenerator.pro</p>
                     <p>г. Москва</p>

@@ -32,12 +32,12 @@ class YouSiteAudit extends Component{
                             <p>в поисковых системах</p>
                         </div>
                         <div className="audit-info__item">
-                            <img src="images/clients.svg" alt="Позиции" title="Поднять позиции" data-audit="Увеличить число новых клиентов" onClick={this.callPopupHandler.bind(this)}/>
+                            <img src="images/clients.svg" alt="Увеличить число клиентов" title="Увеличить число новых клиентов" data-audit="Увеличить число новых клиентов" onClick={this.callPopupHandler.bind(this)}/>
                             <h4>Увеличить</h4>
                             <p>число новых клиентов</p>
                         </div>
                         <div className="audit-info__item">
-                            <img src="images/lowprice.svg" alt="Позиции" title="Поднять позиции"  data-audit="Уменьшить стоимость привлечения клиентов" onClick={this.callPopupHandler.bind(this)}/>
+                            <img src="images/lowprice.svg" alt="Уменьшить стоимость привлечения клиентов" title="Уменьшить стоимость привлечения клиентов"  data-audit="Уменьшить стоимость привлечения клиентов" onClick={this.callPopupHandler.bind(this)}/>
                             <h4>Уменьшить стоимость</h4>
                             <p>привлечения клиентов</p>
                         </div>

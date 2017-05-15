@@ -27,7 +27,7 @@ class IncludeAudit extends Component{
                    <div className="include-materials">
                        <div className="include-materials__list">
                          <p className="list-item"><img src="images/grow.svg"/>Рекомендации по увеличению посещаемости и продаж с Вашего сайта</p>
-                         <p className="list-item"><img src="images/questions.svg"/>Полное и четкое понимание всех плюсов и минусов вашего сайта</p>
+                         <p className="list-item"><img src="images/questions.svg"/>Полное и четкое понимание всех плюсов и минусов Вашего сайта</p>
                          <p className="list-item"><img src="images/search.svg"/>Анализ ошибок внутренней и внешней оптимизации сайта</p>
                          <p className="list-item"><img src="images/gauge.svg"/>Оценка потенциала Вашего сайта для дальнейшего продвижения</p>
                          <p className="list-item"><img src="images/list.svg"/>Список действий, которые дадут максимальный эффект в краткосрочном периоде</p>

@@ -59,7 +59,7 @@
     &__header{
       font-size: 30px;
       font-family: $seo-font;
-      margin: 20px 0 30px 0;
+      margin: 40px 0 30px 0;
       text-align: center;
       .useful{
         text-transform: uppercase;
@@ -127,7 +127,7 @@
     } @else if($i == 2) {
       &__partition--#{$i}{
         p{
-          width: 108%;
+          width: 109%;
         }
         /*&::before{
           content: '';
@@ -369,6 +369,7 @@
   &__title{
     @extend .audit__title;
     margin-top: 50px;
+    margin-bottom: 20px;
   }
   &__subtitle{
     font-family: $primary-font;
@@ -478,6 +479,7 @@
         align-items: center;
         &--plus{
           position: relative;
+          margin: 20px 0 -15px 0;
           &::before{
             font-family: FontAwesome;
             content: '\f055';
@@ -536,6 +538,9 @@
           font-family: $headers-font-regular;
           font-size: 28px;
           color: black;
+          &--red-price{
+            color: #e53835;
+          }
         }
         .btn{
           font-family: $primary-font;
@@ -564,7 +569,7 @@
 @media screen and (min-width: 1501px){
   .header{
     &__content{
-      padding: 180px 0 80px 0;
+      padding: 126px 0 120px 0;
     }
   }
 }
@@ -572,7 +577,12 @@
 @media screen and (min-width: 1200px) and (max-width: 1500px){
   .header{
     &__content{
-      padding: 100px 0 20px 0;
+      padding: 70px 0 60px 0;
     }
+  }
+  .header-content-background{
+    background-position: 82% 65%;
+    background-size: 40% 70%;
+
   }
 }

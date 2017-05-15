@@ -70,7 +70,7 @@ class Proposition extends Component{
                                     <h5 className="price__discount-header">Только до конца недели!</h5>
                                     <p className="price__discount-oldprice">19 990 р.</p>
                                 </div>
-                                <p className="price__text">9 900 р.</p>
+                                <p className="price__text price__text--red-price">9 900 р.</p>
                                 <button className="btn" data-rate="Оптимальный" onClick={this.openModalHandler.bind(this)}>Заказать аудит со скидкой</button>
                             </footer>
                           </div>
@@ -91,7 +91,7 @@ class Proposition extends Component{
                                 <div className="rate__text"><img src="images/check.svg"/><p>Полное и четкое понимание того, в каком состоянии находится Ваш сайт сейчас</p></div>
                                 <div className="rate__text"><img src="images/check.svg"/><p>Список действий, которые дадут максимальный эффект в кратчайшие сроки</p></div>
                                 <div className="rate__time">Срок выполнения: <span>24</span> часа</div>
-                                <div className="rate__text rate__text--plus"><p>30-минутная консультация веб-аналитика после аудита</p></div>
+                                <div className="rate__text rate__text--plus"><p>45-минутная консультация веб-аналитика после аудита</p></div>
                             </main>
                             <footer className="price">
                                 <p className="price__text">29 900 р.</p>

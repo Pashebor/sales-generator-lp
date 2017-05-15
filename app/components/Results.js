@@ -55,7 +55,7 @@ class Result extends Component{
         <section className="results">
             <div className="zigzag-bottom">
                 <div className="container">
-                    <h2 className="results__title">Результаты сайтов после внедрения наших рекомендаций</h2>
+                    <h2 className="results__title">Результаты сайтов после <br/> внедрения наших рекомендаций</h2>
                     <p className="results__subtitle">Более <span>870 сайтов</span> улучшили свои показатели благодаря нашему аудиту</p>
                     <Slider {...settings}>
                     <div>
