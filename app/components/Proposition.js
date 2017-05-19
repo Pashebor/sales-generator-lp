@@ -91,7 +91,7 @@ class Proposition extends Component{
                                 <div className="rate__text"><img src="images/check.svg"/><p>Полное и четкое понимание того, в каком состоянии находится Ваш сайт сейчас</p></div>
                                 <div className="rate__text"><img src="images/check.svg"/><p>Список действий, которые дадут максимальный эффект в кратчайшие сроки</p></div>
                                 <div className="rate__time">Срок выполнения: <span>24</span> часа</div>
-                                <div className="rate__text rate__text--plus"><p>45-минутная консультация веб-аналитика после аудита</p></div>
+                                <div className="rate__text rate__text--plus"><p>60-минутная консультация веб-аналитика после аудита</p></div>
                             </main>
                             <footer className="price">
                                 <p className="price__text">29 900 р.</p>
