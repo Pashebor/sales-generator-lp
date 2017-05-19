@@ -569,15 +569,20 @@
 @media screen and (min-width: 1501px){
   .header{
     &__content{
-      padding: 126px 0 120px 0;
+      padding: 180px 0 160px 0;
     }
+  }
+  .header-content-background{
+    background-position: 80% 70%;
+    background-size: 40% 70%;
+
   }
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1500px){
   .header{
     &__content{
-      padding: 70px 0 60px 0;
+      padding: 100px 0 90px 0;
     }
   }
   .header-content-background{
