@@ -156,6 +156,17 @@
         }
       }
     }
+    .top-button-block{
+      bottom: 40px;
+      .top-button{
+        width: 40px;
+        height: 40px;
+        line-height: 35px;
+        &::before{
+          font-size: 35px;
+        }
+      }
+    }
   }
 
   .popup-overlay .popup-form{

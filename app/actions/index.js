@@ -9,7 +9,15 @@ export const SEND_CLIENTS_SUCCESS = 'knowClients';
 export const RATE_TYPE = 'setTypeRate';
 export const AUDITS_REQUEST = 'setTypeAudit';
 export const NULL_CALLBACKS = 'nullCallbacks';
+export const SCROLLER_OPACITY = 'setOpacity';
 /*ACTIONS*/
+
+export const setOpacity = (opacity) => {
+        return {
+            type: SCROLLER_OPACITY,
+            opacity: opacity
+        }
+};
 
 export const showModal = (logicValue) => {
   return{

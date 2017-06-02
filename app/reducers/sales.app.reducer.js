@@ -1,4 +1,4 @@
-import {GET_MODAL_FORM, OPEN_FULL_CASE, OPEN_SLIDER, SEND_MESSAGE_SUCCESS, SEND_CLIENTS_SUCCESS, RATE_TYPE, AUDITS_REQUEST, NULL_CALLBACKS} from '../actions/index';
+import {GET_MODAL_FORM, OPEN_FULL_CASE, OPEN_SLIDER, SEND_MESSAGE_SUCCESS, SEND_CLIENTS_SUCCESS, RATE_TYPE, AUDITS_REQUEST, NULL_CALLBACKS, SCROLLER_OPACITY} from '../actions/index';
 
 const initialState = {
     modalShow: false,
@@ -9,6 +9,7 @@ const initialState = {
     responseJson: null,
     clientsResp: null,
     typeRate: '',
+    opacity: '',
     auditType: ''
 };
 
@@ -20,6 +21,8 @@ const salesReducer =  ( state = initialState, action) => {
             return Object.assign({}, state, {caseUri: action.payload, fullCase: action.show});
         case OPEN_SLIDER:
             return Object.assign({}, state, {caseUri: action.payload, slider: action.show});
+        case SCROLLER_OPACITY:
+            return Object.assign({}, state, {opacity: action.opacity});
         case SEND_MESSAGE_SUCCESS:
             return Object.assign({}, state, {responseJson: action.payload});
         case SEND_CLIENTS_SUCCESS:
