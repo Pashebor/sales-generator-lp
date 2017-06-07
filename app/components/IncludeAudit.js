@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {showModal, openSlider, setTypeRate} from '../actions/index';
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
+import ScrollableAnchor from 'react-scrollable-anchor';
 
 
 class IncludeAudit extends Component{
@@ -17,6 +18,7 @@ class IncludeAudit extends Component{
     }
     render() {
     return(
+     <ScrollableAnchor id={'audit-includes'}>
          <section className="include">
              <div className="include-wrapper">
                <div className="separatortop">
@@ -42,6 +44,7 @@ class IncludeAudit extends Component{
                </div>
              </div>
          </section>
+     </ScrollableAnchor>
     );
     }
 };

@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import ButtonToTop from './ButtonToTop';
+/*import ButtonToTop from './ButtonToTop';*/
+
 
 const Footer = () => {
     return(
+
         <footer className="footer">
-            <ButtonToTop/>
+            {/*<ButtonToTop/>*/}
             <div className="separatortop">
                 <svg id="triangle" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M 0 0 V 100 H 0 L 50 0 L 100 100 H 100 V 0 Z" ></path></svg>
             </div>
@@ -15,11 +17,10 @@ const Footer = () => {
                     <p>info@salesgenerator.pro</p>
                     <p>г. Москва</p>
                 </address>
-                <div className="footer__phone">
-                    <p>Звонок по России бесплатный</p>
-                    <a href="tel: 8 (800) 775 43 06">8 (800) 775 43 06</a>
-                </div>
-
+                    <div className="footer__phone">
+                        <p>Звонок по России бесплатный</p>
+                        <a href="tel: 8 (800) 775 43 06">8 (800) 775 43 06</a>
+                    </div>
               </div>
             </div>
         </footer>
