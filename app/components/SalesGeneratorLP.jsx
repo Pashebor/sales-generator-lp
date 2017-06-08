@@ -5,19 +5,25 @@ import Footer from './Footer.jsx';
 import ModalForm from './ModalForm';
 import FullCase from './FullCase';
 import SliderPopup from './SliderPopup';
+import  { configureAnchors} from 'react-scrollable-anchor';
 
-
-const App = () => {
-    return(
-        <div>
-            <SliderPopup/>
-            <FullCase/>
-            <ModalForm/>
-            <Header/>
-            <Main/>
-            <Footer/>
-        </div>
-    )
-};
+class App extends React.Component{
+   constructor() {
+       super();
+       configureAnchors({offset: 0, scrollDuration: 1000});
+   }
+    render() {
+       return(
+           <div>
+               <SliderPopup/>
+               <FullCase/>
+               <ModalForm/>
+               <Header/>
+               <Main/>
+               <Footer/>
+           </div>
+       )
+   }
+}
 
 export default App;

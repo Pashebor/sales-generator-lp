@@ -19,7 +19,7 @@ const Footer = () => {
                 </address>
                     <div className="footer__phone">
                         <p>Звонок по России бесплатный</p>
-                        <a href="tel: 8 (800) 775 43 06">8 (800) 775 43 06</a>
+                        <a href="tel:88003331293">8 (800) 333 12 93</a>
                     </div>
               </div>
             </div>

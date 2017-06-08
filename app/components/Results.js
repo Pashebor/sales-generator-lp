@@ -3,7 +3,7 @@ import {openCase} from '../actions/index';
 import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux';
 import Slider from 'react-slick';
-
+import ScrollableAnchor from 'react-scrollable-anchor';
 
 class Result extends Component{
     caseClickHandler(event){
@@ -52,11 +52,14 @@ class Result extends Component{
             }]
         };
     return(
+
         <section className="results">
             <div className="zigzag-bottom">
+
                 <div className="container">
                     <h2 className="results__title">Результаты сайтов после <br/> внедрения наших рекомендаций</h2>
                     <p className="results__subtitle">Более <span>870 сайтов</span> улучшили свои показатели благодаря нашему аудиту</p>
+                    <ScrollableAnchor id={'results'}>
                     <Slider {...settings}>
                     <div>
                     <div className="results-info__row">
@@ -91,7 +94,9 @@ class Result extends Component{
                             </div>
                         </div>
                     </Slider>
+                    </ScrollableAnchor>
                 </div>
+
             </div>
         </section>
     );

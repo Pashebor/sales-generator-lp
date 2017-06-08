@@ -4,7 +4,6 @@ import {sendClientsCallback} from '../actions/index';
 import { bindActionCreators } from 'redux';
 import MaskedInput from 'react-maskedinput';
 
-
 class HeaderContent extends Component{
 
     btnSubmitHandler(e) {

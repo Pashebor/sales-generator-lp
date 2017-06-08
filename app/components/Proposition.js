@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {showModal, setTypeRate} from '../actions/index';
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
+import ScrollableAnchor from 'react-scrollable-anchor';
 
 class Proposition extends Component{
     openModalHandler(event) {
@@ -27,7 +28,8 @@ class Proposition extends Component{
         return(
             <section className="proposition">
                 <div className="container">
-                    <h2 className="proposition__title">Сколько стоит SEO-аудит?</h2>
+
+                       <h2 className="proposition__title">Сколько стоит SEO-аудит?</h2>
                     <div className="proposition-block">
                         <div className="proposition-block__item">
                           <div className="proposition-block__item-wrapper">
@@ -56,9 +58,9 @@ class Proposition extends Component{
                                 </div>
                             </header>
                             <main className="rate">
-                                <div className="rate__plus">
-                                    <p>Базовый <br/> <span>+</span></p>
-                                </div>
+                                    <div className="rate__plus">
+                                        <p>Базовый <br/> <span>+</span></p>
+                                    </div>
                                 <div className="rate__text"><img src="images/check.svg"/><p>Анализ внешней и внутренней оптимизации сайта</p></div>
                                 <div className="rate__text"><img src="images/check.svg"/><p>Анализ мета-тегов и семантического ядра сайта</p></div>
                                 <div className="rate__text"><img src="images/check.svg"/><p>Подробные рекомендации по увеличению продаж с Вашего сайта</p></div>
@@ -71,7 +73,8 @@ class Proposition extends Component{
                                     <p className="price__discount-oldprice">19 990 р.</p>
                                 </div>
                                 <p className="price__text price__text--red-price">9 900 р.</p>
-                                <button className="btn" data-rate="Оптимальный" onClick={this.openModalHandler.bind(this)}>Заказать аудит со скидкой</button>
+
+                                    <button className="btn" data-rate="Оптимальный" onClick={this.openModalHandler.bind(this)}>Заказать аудит со скидкой</button>
                             </footer>
                           </div>
                         </div>
@@ -93,18 +96,21 @@ class Proposition extends Component{
                                 <div className="rate__time">Срок выполнения: <span>24</span> часа</div>
                                 <div className="rate__text rate__text--plus"><p>60-минутная консультация веб-аналитика после аудита</p></div>
                             </main>
-                            <footer className="price">
-                                <p className="price__text">29 900 р.</p>
-                                <button className="btn" data-rate="Премиум" onClick={this.openModalHandler.bind(this)}>Заказать аудит</button>
-                            </footer>
+                                  <footer className="price">
+                                      <p className="price__text">29 900 р.</p>
+                                      <button className="btn" data-rate="Премиум" onClick={this.openModalHandler.bind(this)}>Заказать аудит</button>
+                                  </footer>
                           </div>
                         </div>
                     </div>
                 </div>
+            <ScrollableAnchor id={'audit-cost'}>
                 <div className="separator-bottom">
                     <div className="gradient-bottom"></div>
                 </div>
+            </ScrollableAnchor>
             </section>
+
         )
     }
 }

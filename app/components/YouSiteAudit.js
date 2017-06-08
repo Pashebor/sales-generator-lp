@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {showModal, setTypeAudit} from '../actions/index';
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
+import ScrollableAnchor from 'react-scrollable-anchor';
 
 class YouSiteAudit extends Component{
     callPopupHandler(event) {
@@ -21,6 +22,7 @@ class YouSiteAudit extends Component{
     }
     render() {
         return(
+            <ScrollableAnchor id={'help-audit'}>
             <section className="audit">
               <div className="zigzag-bottom">
                 <div className="container">
@@ -45,6 +47,7 @@ class YouSiteAudit extends Component{
                 </div>
               </div>
             </section>
+            </ScrollableAnchor>
         );
     }
 }
