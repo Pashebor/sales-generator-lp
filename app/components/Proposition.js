@@ -39,9 +39,10 @@ class Proposition extends Component{
                                </div>
                             </header>
                             <main className="rate">
-                                <div className="rate__text"><img src="images/check.svg"/><p>Анализ источников трафика и их эффективности</p></div>
-                                <div className="rate__text"><img src="images/check.svg"/><p>Рекомендации по устранению обнаруженных технических проблем</p></div>
-                                <div className="rate__text"><img src="images/check.svg"/><p>Предложения по улучшению юзабилити и повышению конверсии</p></div>
+                                <div className="rate__text"><figure className="icon-block"><img src="images/check.svg"/></figure><div className="sign"><p>Анализ источников трафика и их эффективности</p></div></div>
+                                <div className="rate__text"><figure className="icon-block"><img src="images/check.svg"/></figure><div className="sign"><p>Рекомендации по устранению обнаруженных технических проблем</p></div></div>
+                                <div className="rate__text"><figure className="icon-block"><img src="images/check.svg"/></figure><div className="sign"><p>Предложения по улучшению юзабилити и повышению конверсии</p></div></div>
+                                <div className="clear"></div>
                                 <div className="rate__time">Срок выполнения: <span>5</span> дней</div>
                             </main>
                             <footer className="price">
@@ -61,9 +62,10 @@ class Proposition extends Component{
                                     <div className="rate__plus">
                                         <p>Базовый <br/> <span>+</span></p>
                                     </div>
-                                <div className="rate__text"><img src="images/check.svg"/><p>Анализ внешней и внутренней оптимизации сайта</p></div>
-                                <div className="rate__text"><img src="images/check.svg"/><p>Анализ мета-тегов и семантического ядра сайта</p></div>
-                                <div className="rate__text"><img src="images/check.svg"/><p>Подробные рекомендации по увеличению продаж с Вашего сайта</p></div>
+                                <div className="rate__text"><figure className="icon-block"><img src="images/check.svg"/></figure><div className="sign"><p>Анализ внешней и внутренней оптимизации сайта</p></div></div>
+                                <div className="rate__text"><figure className="icon-block"><img src="images/check.svg"/></figure><div className="sign"><p>Анализ мета-тегов и семантического ядра сайта</p></div></div>
+                                <div className="rate__text"><figure className="icon-block"><img src="images/check.svg"/></figure><div className="sign"><p>Подробные рекомендации по увеличению продаж с Вашего сайта</p></div></div>
+                                <div className="clear"></div>
                                 <div className="rate__time">Срок выполнения: <span>72</span> часа</div>
                                 <div className="rate__text rate__text--plus"><p>30-минутная консультация веб-аналитика после аудита</p></div>
                             </main>
@@ -89,10 +91,10 @@ class Proposition extends Component{
                                 <div className="rate__plus">
                                     <p>Оптимальный <br/> <span>+</span></p>
                                 </div>
-                                <div className="rate__text"><img src="images/check.svg"/><p>Выявление ошибок, мешающих выводу сайта в ТОП поисковых систем</p></div>
-                                <div className="rate__text"><img src="images/check.svg"/><p>Глубокий анализ потенциала Вашего сайта для дальнейшего продвижения</p></div>
-                                <div className="rate__text"><img src="images/check.svg"/><p>Полное и четкое понимание того, в каком состоянии находится Ваш сайт сейчас</p></div>
-                                <div className="rate__text"><img src="images/check.svg"/><p>Список действий, которые дадут максимальный эффект в кратчайшие сроки</p></div>
+                                <div className="rate__text"><figure className="icon-block"><img src="images/check.svg"/></figure><div className="sign"><p>Выявление ошибок, мешающих выводу сайта в ТОП поисковых систем</p></div></div>
+                                <div className="rate__text"><figure className="icon-block"><img src="images/check.svg"/></figure><div className="sign"><p>Глубокий анализ потенциала Вашего сайта для дальнейшего продвижения</p></div></div>
+                                <div className="rate__text"><figure className="icon-block"><img src="images/check.svg"/></figure><div className="sign"><p>Полное и четкое понимание того, в каком состоянии находится Ваш сайт сейчас</p></div></div>
+                                <div className="rate__text"><figure className="icon-block"><img src="images/check.svg"/></figure><div className="sign"><p>Список действий, которые дадут максимальный эффект в кратчайшие сроки</p></div></div>
                                 <div className="rate__time">Срок выполнения: <span>24</span> часа</div>
                                 <div className="rate__text rate__text--plus"><p>60-минутная консультация веб-аналитика после аудита</p></div>
                             </main>

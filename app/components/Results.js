@@ -16,13 +16,21 @@ class Result extends Component{
             }
         }
 
-        array.find((source) => {
+        for (let i = 0; i < array.length; i+=1) {
+            if (array[i] === event.target.src) {
+                let index = array.indexOf(array[i]);
+                array.splice(index, 1);
+                array.unshift(event.target.src);
+                break;
+            }
+        }
+        /*array.find((source) => {
             if (source === event.target.src) {
                 let index = array.indexOf(source);
                 array.splice(index, 1);
                 array.unshift(event.target.src);
             }
-        });
+        });*/
 
         this.props.openCase(array, true);
     }

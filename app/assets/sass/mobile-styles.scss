@@ -75,6 +75,7 @@
       }
       &-items{
         font-size: 18px;
+        display: flex;
       }
     }
     @for $partiton from 1 through 2 {

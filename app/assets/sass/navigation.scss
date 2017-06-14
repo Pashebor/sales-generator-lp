@@ -6,8 +6,10 @@
   padding: 10px 0;
   &__logo {
     transition: all 0.3s ease-in-out;
+    flex: 1 15%;
     img{
       width: 200px;
+      height: 61px;
     }
     &:hover{
       transform: scale(1.05);
@@ -16,20 +18,22 @@
   &__title{
     font-size: 20px;
     color: white;
+    flex: 1 30%;
     font-family: $headers-font-bold;
     align-self: flex-start;
-    margin: auto;
     position: relative;
-    left: 3%;
+    text-align: center;
   }
   &__tel{
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     align-self: center;
     color: white;
+    display: block;
+    flex: 1 20%;
     font-size: 22px;
     margin-left: auto;
     width: 20%;
-    text-align: right;
+    text-align: center;
     font-weight: 600;
     transition: all 0.3s ease-in-out;
     &::before{

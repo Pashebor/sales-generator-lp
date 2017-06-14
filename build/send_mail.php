@@ -17,6 +17,7 @@ require ('./phpmailer/PHPMailerAutoload.php');
  $mail->addAddress('info@salesgenerator.pro', 'Генератор продаж');
  $mail->addAddress('pm@salesgenerator.pro', 'Генератор продаж');
  $mail->addAddress('vip@salesgenerator.pro', 'Генератор продаж');
+ $mail->addAddress('ac@salesgenerator.pro', 'Генератор продаж');
  $mail->isHtml(true);
 
 

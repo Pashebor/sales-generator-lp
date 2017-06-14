@@ -73,6 +73,11 @@
     &__partitions{
       &-items{
         font-size: 16px;
+        display: flex;
+        img{
+          float: none;
+          padding-right: 0;
+        }
       }
     }
   }

@@ -61,7 +61,7 @@ class FullCase extends Component{
         }
     }
 
-    closeFullcaseHandler() {
+    closeFullcaseHandler(){
         this.props.openCase('', false);
     }
     render() {

@@ -38,6 +38,7 @@
     height: 44px;
     border-radius: 5px;
     line-height: 20px;
+    flex: 1 10%;
   }
 }
 
@@ -99,7 +100,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top:0;
+  top: -0.5px;
   overflow: hidden;
   #triangle{
     height: 34px;

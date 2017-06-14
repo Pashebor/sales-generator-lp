@@ -13,17 +13,27 @@
 
 @font-face {
   font-family: OpenSansLight;
-  src: url(../fonts/OpenSans-Light.ttf);
+  src: url(../fonts/OpenSansLight.eot);
+  src: url(../fonts/OpenSansLight.eot?#iefix)format("embedded-opentype"),
+  url(../fonts/OpenSans-Light.ttf)format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
   font-family: OpenSansRegular;
-  src: url(../fonts/OpenSans-Regular.ttf);
+  src: url(../fonts/OpenSansRegular.eot);
+  src: url(../fonts/OpenSansRegular.eot?#iefix)format("embedded-opentype"), url(../fonts/OpenSans-Regular.ttf)format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
   font-family: OpenSansBold;
-  src: url(../fonts/OpenSans-Bold.ttf);
+  src: url(../fonts/OpenSansBold.eot);
+  src: url(../fonts/OpenSansBold.eot?#iefix)format("embedded-opentype"), url(../fonts/OpenSans-Bold.ttf)format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
