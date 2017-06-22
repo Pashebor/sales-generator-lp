@@ -17,9 +17,9 @@ const SeoBlock = () => {
              </div>
              <div className="seo__partition--2">
                  <h3 className="seo__partitions__header">Аудит сайта <span className="useful useful--yes">нужен</span> Вам, если:</h3>
-                 <p className="seo__partitions-items"><img src="images/id.png" alt="Владелец бизнеса"/>Вы - владелец бизнеса, руководитель компании, коммерческий директор, маркетолог;</p>
-                 <p className="seo__partitions-items"><img src="images/grow.png" alt="Повысить конверсию"/>Вы хотите узнать, как повысить конверсию сайта;</p>
-                 <p className="seo__partitions-items"><img src="images/firstplace.png" alt="Высокие позиции"/>Вы хотите узнать, как обеспечить своему сайту высокие позиции в поисковиках;</p>
+                 <p className="seo__partitions-items"><img src="images/id.svg" alt="Владелец бизнеса"/>Вы - владелец бизнеса, руководитель компании, коммерческий директор, маркетолог;</p>
+                 <p className="seo__partitions-items"><img src="images/grow-seo.svg" alt="Повысить конверсию"/>Вы хотите узнать, как повысить конверсию сайта;</p>
+                 <p className="seo__partitions-items"><img src="images/firstplace.svg" alt="Высокие позиции"/>Вы хотите узнать, как обеспечить своему сайту высокие позиции в поисковиках;</p>
                  <p className="seo__partitions-items"><img src="images/tools-icon.svg" alt="Проверить подрядчика"/>Вы хотите проверить текущего подрядчика;</p>
                  <p className="seo__partitions-items"><img src="images/aim-icon.svg" alt="Увеличить количество целевых обращений"/>Вы хотите увеличить количество целевых обращений с сайта.</p>
              </div>

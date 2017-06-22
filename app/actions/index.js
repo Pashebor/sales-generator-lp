@@ -10,7 +10,16 @@ export const RATE_TYPE = 'setTypeRate';
 export const AUDITS_REQUEST = 'setTypeAudit';
 export const NULL_CALLBACKS = 'nullCallbacks';
 export const SCROLLER_OPACITY = 'setOpacity';
+export const INCLUDE_AUDIT_FORM = 'setInclude';
+
 /*ACTIONS*/
+
+export const setInclude = (value) => {
+    return {
+        type: INCLUDE_AUDIT_FORM,
+        payload: value
+    }
+};
 
 export const setOpacity = (opacity) => {
         return {

@@ -4,55 +4,41 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var JavaScriptObfuscator = require('webpack-obfuscator');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var root = path.resolve(__dirname, 'app');
 
 module.exports = {
+    context: path.join(__dirname, 'app'),
+    devServer: {
+        outputPath: path.join(__dirname, 'build')
+    },
     entry: {
         sales_generator_lp: path.resolve(root, 'sales.generator.lp.jsx'),
         style: path.resolve(root, 'assets/sass/style.scss'),
-        saleslogo: path.resolve(root, 'assets/images/saleslogowhite.svg'),
-        circle: path.resolve(root, 'assets/images/circle.svg'),
-        gears: path.resolve(root, 'assets/images/gears.png'),
-        cam: path.resolve(root, 'assets/images/cam.png'),
-        cmsability: path.resolve(root, 'assets/images/cms-ability.png'),
-        htmlvalidator: path.resolve(root, 'assets/images/html-validator.png'),
-        rocket: path.resolve(root, 'assets/images/rocket.png'),
-        aim: path.resolve(root, 'assets/images/aim.png'),
-        firstplace: path.resolve(root, 'assets/images/firstplace.png'),
-        grow: path.resolve(root, 'assets/images/grow.png'),
-        id: path.resolve(root, 'assets/images/id.png'),
-        tools: path.resolve(root, 'assets/images/tools.png'),
-        clients: path.resolve(root, 'assets/images/clients.svg'),
-        lowprice: path.resolve(root, 'assets/images/lowprice.svg'),
-        schedule: path.resolve(root, 'assets/images/schedule.svg'),
-        includebackground: path.resolve(root, 'assets/images/includebackground.jpg'),
         slick: path.resolve(root, 'assets/common/slick.min.css'),
         slicktheme: path.resolve(root, 'assets/common/slick-theme.min.css')
-        /*flower: path.resolve(root, 'assets/img/flowers.png'),
-        paint: path.resolve(root, 'assets/img/paint.png'),
-        loading: path.resolve(root, 'assets/img/loading.png')*/
     },
     output:{
         path: __dirname + '/build',
         filename: '[name].js'
     },
 
-    watch: true,
+    watch: false,
 
     module: {
         loaders: [
             {
-             test: /\.jsx?$/,
-             exclude: /(node_modules)/,
-             loader: "babel-loader",
+                test: /\.jsx?$/,
+                exclude: /(node_modules)/,
+                loader: "babel-loader",
                 query: {
                     presets: ['es2015', 'react']
                 }
             },
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader!autoprefixer-loader?safe=true!sass-loader' })
+                loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader!postcss-loader!sass-loader' })
             },
             {
                 test: /\.(svg)|(png)|(jpg)$/,
@@ -71,12 +57,15 @@ module.exports = {
     //devtool: "eval-source-map",
     plugins: [
         new HtmlWebpackPlugin({
-           template: path.resolve(root, './index.html')
+            template: path.resolve(root, './index.html')
         }),
         new ExtractTextPlugin({ filename: './[name].css', disable: false, allChunks: true }),
-        new OptimizeCssAssetsPlugin(),
+        new CopyWebpackPlugin([
+            { from: 'assets/images', to: './images/' },
+            { from: 'assets/common', to: './common'}
+        ]),
         new JavaScriptObfuscator ({
             rotateUnicodeArray: true
         }, ['[name].js'])
-   ]
+    ]
 };

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {showModal, openSlider, setTypeRate} from '../actions/index';
+import {showModal, openSlider, setTypeRate, setInclude} from '../actions/index';
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
@@ -9,6 +9,7 @@ class IncludeAudit extends Component{
     showModalHandler(){
         this.props.setTypeRate('');
         this.props.showModal(true);
+        this.props.setInclude(true);
         yaCounter44418460.reachGoal('KNOW_AMOUNT');
         return true;
     }
@@ -38,9 +39,9 @@ class IncludeAudit extends Component{
                            <div>
                                <img src="images/pages-audit.png" alt="Примеры работ" title="Примеры работ" onClick={this.showSliderHandler.bind(this)}/>
                            </div>
-                           <button className="btn" onClick={this.showModalHandler.bind(this)}>Узнайте, сколько клиентов может принести Ваш сайт!</button>
                        </div>
                    </div>
+                   <button className="btn" onClick={this.showModalHandler.bind(this)}>Скачать пример рекомендаций из аудита! <br/> <span>PDF 2.25 МБ</span></button>
                </div>
              </div>
          </section>
@@ -56,7 +57,7 @@ const mapStateToProps = (store) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({showModal, openSlider, setTypeRate}, dispatch);
+    return bindActionCreators({showModal, openSlider, setTypeRate, setInclude}, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(IncludeAudit);

@@ -253,6 +253,15 @@
          }
       }
     }
+    .btn{
+      display: block;
+      margin: 25px auto 0 auto;
+      white-space: normal;
+      span{
+        font-family: $primary-font;
+        text-transform: uppercase;
+      }
+    }
     &-materials{
       display: flex;
       flex-flow: row;

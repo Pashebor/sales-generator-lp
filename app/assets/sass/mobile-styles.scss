@@ -70,6 +70,7 @@
     &__partitions{
       flex-flow: column;
       align-items: center;
+      overflow: hidden;
       &__header{
         font-size: 22px;
       }

@@ -27,6 +27,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $arrRequest = json_decode($idToDel, true);
     if (!empty($arrRequest)) {
      switch ($arrRequest['form-name']) {
+      case 'include-audit':
+       $mail->Subject = 'Заказ Примера рекомендаций из аудита';
+       $mail->Body = '<div><p>Электронная почта клиента: '.$arrRequest['email'].'</p><p>Номер телефона: '.$arrRequest['phone'].'</p></div>';
+       $mail->send();
+          echo json_encode(["response" => true]);
+          break;
       case 'callback':
        $mail->Subject = 'Заказ аудита - обратный звонок';
        $mail->Body = '<div><p>Время звонка: '.$arrRequest['callback'].'</p><p>Номер телефона: '.$arrRequest['phone'].'</p></div>';

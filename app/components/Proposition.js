@@ -72,9 +72,9 @@ class Proposition extends Component{
                             <footer className="price">
                                 <div className="price__discount">
                                     <h5 className="price__discount-header">Только до конца недели!</h5>
-                                    <p className="price__discount-oldprice">19 990 р.</p>
+                                    <p className="price__discount-oldprice">15 000 р.</p>
                                 </div>
-                                <p className="price__text price__text--red-price">9 900 р.</p>
+                                <p className="price__text price__text--red-price">7 490 р.</p>
 
                                     <button className="btn" data-rate="Оптимальный" onClick={this.openModalHandler.bind(this)}>Заказать аудит со скидкой</button>
                             </footer>
