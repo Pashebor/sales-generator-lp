@@ -94,7 +94,7 @@ class ModalForm extends Component{
             <div className="popup-overlay" style={this.isShow()} onClick={this.closeModalHandler.bind(this)}>
               <div className="popup-form">
                   <div className="popup-form__close" onClick={this.closeModalHandler.bind(this)}>&times;</div>
-                  {this.props.formState.includeAudit ? <p>Оставьте Ваши контакты и мы отправим <br/> Вам пример на электронную почту</p> :<p>Оформление заявки</p>}
+                  {this.props.formState.includeAudit ? <p className="alternative">Оставьте Ваши контакты и мы отправим Вам пример на электронную почту</p> :<p>Оформление заявки</p>}
                   {this.mailNotification()}
                   <form className="form-group" onClick={this.formClickHandler.bind(this)} onSubmit={this.btnSubmitHandler.bind(this)}>
                       {this.props.formState.includeAudit ? <label>Ваш Email <span>*</span></label> : <label>Во сколько Вам позвонить?</label>}

@@ -41,7 +41,7 @@ class IncludeAudit extends Component{
                            </div>
                        </div>
                    </div>
-                   <button className="btn" onClick={this.showModalHandler.bind(this)}>Скачать пример рекомендаций из аудита! <br/> <span>PDF 2.25 МБ</span></button>
+                   <button className="btn" onClick={this.showModalHandler.bind(this)}>Скачать пример рекомендаций из аудита <br/> <span>PDF 2.25 МБ</span></button>
                </div>
              </div>
          </section>
