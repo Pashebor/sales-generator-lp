@@ -67,7 +67,7 @@
     }
     input[type="submit"] {
       display: block;
-      width: 50%;
+      width: 55%;
       margin: 15px auto 0 auto;
     }
   }
@@ -148,6 +148,7 @@
 @media screen and (min-width: 1367px) and (max-width: 1500px){
   .popup-overlay {
   .popup-form{
+    width: 38%;
     input[type="submit"] {
       width: 70%;
     }
@@ -165,9 +166,11 @@
 
 }
 
+
 @media screen and (min-width: 1200px) and (max-width: 1366px){
   .popup-overlay {
     .popup-form{
+      width: 38%;
       input[type="submit"] {
         width: 70%;
       }

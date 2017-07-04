@@ -6,7 +6,25 @@
 @import "footer";
 @import "modal-form";
 
-
+/*Personal data block*/
+#app .personal-data{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 15px;
+  .form-control{
+    height: 18px;
+    width: 18px;
+  }
+  p{
+    font-size: 16px;
+    padding: 0;
+    display: block;
+    line-height: 27px;
+    margin-left: 4px;
+  }
+}
+/********************/
 .btn{
   background-color: rgb(97, 189, 112);
   border-radius: 5px;

@@ -101,6 +101,9 @@ class ModalForm extends Component{
                       {this.props.formState.includeAudit ? <input type="email" ref="email" required="true" className="form-control" placeholder="Email"/> : <MaskedInput  mask="11:11" type="text" ref="callback" name="callback" className="form-control"/>}
                       <label>Телефон <span>*</span></label>
                       <MaskedInput  mask="+7(111) 111 11 11" type="text" ref="phone" name="phone" required="true" className="form-control"/>
+                      <div className="personal-data">
+                          <input type="checkbox" className="form-control" required/><p>Согласен на обработку <a href="https://sales-generator.ru/Politika-konfidencialnosti.pdf">персональных данных</a></p>
+                      </div>
                       <input type="submit" value='Отправить заявку!' className="btn"/>
                   </form>
               </div>
