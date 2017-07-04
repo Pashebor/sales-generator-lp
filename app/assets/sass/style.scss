@@ -25,6 +25,17 @@
   }
 }
 /********************/
+
+#app .confidential-link {
+  color: #60b57e;
+  text-decoration: none;
+  transition: color 0.2s ease-in;
+  font-weight: 600;
+  &:hover{
+    color: white;
+  }
+}
+
 .btn{
   background-color: rgb(97, 189, 112);
   border-radius: 5px;
