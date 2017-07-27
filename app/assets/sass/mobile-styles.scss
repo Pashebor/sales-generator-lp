@@ -199,6 +199,12 @@
     width: 50% !important;
     padding: 8px 28px !important;
   }
-
+  .popup-overlay .popup-form{
+    top: 5%;
+    p{
+      font-size: 18px;
+      padding: 0;
+    }
+  }
 
 }

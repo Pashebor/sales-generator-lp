@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {showModal, sendCallback, nullCallbacks, setInclude} from '../actions/index';
 import { bindActionCreators } from 'redux';
-import MaskedInput from 'react-maskedinput';
 
-class ModalForm extends Component{
+class MobileModalForm extends Component{
     isShow() {
         if (this.props.formState.modalShow) {
-             return {
-                 display: 'block',
-                 animation: 'popupAnimOpen 0.4s 1 linear'
-             };
+            return {
+                display: 'block',
+                animation: 'popupAnimOpen 0.4s 1 linear'
+            };
         } else {
             return {
                 animation: 'popupAnimClose 0.4s 1 linear',
@@ -33,7 +32,7 @@ class ModalForm extends Component{
         };
 
         if (response) {
-         return notification(response);
+            return notification(response);
         } else {
             return false;
         }
@@ -46,24 +45,24 @@ class ModalForm extends Component{
             if (!this.props.formState.includeAudit) {
                 formData = {'form-name': 'callback'};
                 for (let field in this.refs) {
-                    formData[field] = this.refs[field].mask.getValue();
+                    formData[field] = this.refs[field].value;
                 }
             } else {
                 formData = {'form-name': 'include-audit'};
                 formData.email = this.refs.email.value;
-                formData.phone = this.refs.phone.mask.getValue();
+                formData.phone = this.refs.phone.value;
             }
             this.props.sendCallback(formData);
         } else if(this.props.formState.typeRate && !this.props.formState.auditType) {
             let formData = {'form-name': 'rates', 'rate': this.props.formState.typeRate};
             for (let field in this.refs) {
-                formData[field] = this.refs[field].mask.getValue();
+                formData[field] = this.refs[field].value;
             }
             this.props.sendCallback(formData);
         } else if(!this.props.formState.typeRate && this.props.formState.auditType) {
             let formData = {'form-name': 'audits', 'type': this.props.formState.auditType};
             for (let field in this.refs) {
-                formData[field] = this.refs[field].mask.getValue();
+                formData[field] = this.refs[field].value;
             }
             this.props.sendCallback(formData);
         }
@@ -73,11 +72,11 @@ class ModalForm extends Component{
         e.stopPropagation();
         if (!this.props.formState.includeAudit) {
             for (let fieldClear in this.refs) {
-                this.refs[fieldClear].mask.setValue('');
+                this.refs[fieldClear].value = '';
             }
         } else {
             this.refs.email.value = '';
-            this.refs.phone.mask.setValue('');
+            this.refs.phone.value = '';
         }
         this.props.showModal(false);
         this.props.nullCallbacks(null, null);
@@ -92,21 +91,23 @@ class ModalForm extends Component{
     render() {
         return(
             <div className="popup-overlay" style={this.isShow()} onClick={this.closeModalHandler.bind(this)}>
-              <div className="popup-form">
-                  <div className="popup-form__close" onClick={this.closeModalHandler.bind(this)}>&times;</div>
-                  {this.props.formState.includeAudit ? <p className="alternative">Оставьте Ваши контакты и мы отправим Вам пример на электронную почту</p> :<p>Оформление заявки</p>}
-                  {this.mailNotification()}
-                  <form className="form-group" onClick={this.formClickHandler.bind(this)} onSubmit={this.btnSubmitHandler.bind(this)}>
-                      {this.props.formState.includeAudit ? <label>Ваш Email <span>*</span></label> : <label>Во сколько Вам позвонить?</label>}
-                      {this.props.formState.includeAudit ? <input type="email" ref="email" required="true" className="form-control" placeholder="Email"/> : <MaskedInput  mask="11:11" type="text" ref="callback" name="callback" className="form-control"/>}
-                      <label>Телефон <span>*</span></label>
-                      <MaskedInput  mask="+7(111) 111 11 11" type="text" ref="phone" name="phone" required="true" className="form-control"/>
-                      <div className="personal-data">
-                          <input type="checkbox" className="form-control" required defaultChecked/><p>Согласен на обработку <a href="https://sales-generator.ru/Politika-konfidencialnosti.pdf">персональных данных</a></p>
-                      </div>
-                      <input type="submit" value='Отправить заявку!' className="btn"/>
-                  </form>
-              </div>
+                <div className="popup-form">
+                    <div className="popup-form__close" onClick={this.closeModalHandler.bind(this)}>&times;</div>
+                    {this.props.formState.includeAudit ? <p className="alternative">Оставьте Ваши контакты и мы отправим Вам пример на электронную почту</p> :<p>Оформление заявки</p>}
+                    {this.mailNotification()}
+                    <form className="form-group" onClick={this.formClickHandler.bind(this)} onSubmit={this.btnSubmitHandler.bind(this)}>
+                        {this.props.formState.includeAudit ? <label>Ваш Email <span>*</span></label> : <label>Во сколько Вам позвонить?</label>}
+                        {this.props.formState.includeAudit ?
+                            <input type="email" ref="email" required="true" className="form-control" placeholder="Email"/> :
+                            <input  placeholder="11:11" type="text" ref="callback" name="callback" className="form-control" required={true}/>}
+                        <label>Телефон <span>*</span></label>
+                        <input  placeholder="+7(___) ___ __ __" type="text" ref="phone" name="phone" required="true" className="form-control"/>
+                        <div className="personal-data">
+                            <input type="checkbox" className="form-control" required defaultChecked={true}/><p>Согласен на обработку <a href="https://sales-generator.ru/Politika-konfidencialnosti.pdf">персональных данных</a></p>
+                        </div>
+                        <input type="submit" value='Отправить заявку!' className="btn"/>
+                    </form>
+                </div>
             </div>
         )
     }
@@ -122,4 +123,4 @@ const mapDispatchToProps = dispatch => {
     return bindActionCreators({showModal, sendCallback, nullCallbacks, setInclude}, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalForm);
+export default connect(mapStateToProps, mapDispatchToProps)(MobileModalForm);

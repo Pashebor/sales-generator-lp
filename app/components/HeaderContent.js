@@ -10,7 +10,7 @@ class HeaderContent extends Component{
         e.preventDefault();
         let formData = {'form-name': 'know'};
         for (let field in this.refs) {
-            formData[field] = this.refs[field].mask.getValue();
+            screen.width < 1024 ? formData[field] = this.refs[field].value : formData[field] = this.refs[field].mask.getValue();
         }
         this.props.sendClientsCallback(formData);
         yaCounter44418460.reachGoal('KNOW');
@@ -48,7 +48,9 @@ class HeaderContent extends Component{
                         <h5 className="know-form__title">Узнайте, сколько новых клиентов Вы можете получить с сайта</h5>
                         {this.clientsNotification()}
                         <form className="form-group know-form" onSubmit={this.btnSubmitHandler.bind(this)}>
-                            <MaskedInput mask="+7(111) 111 11 11" type="text" ref="phone" className="form-control" placeholder="Телефон *"  required/>
+                            {screen.width < 1024 ? <input type="text" ref="phone" className="form-control" placeholder="Телефон *"  required/> :
+                                <MaskedInput mask="+7(111) 111 11 11" type="text" ref="phone" className="form-control" placeholder="Телефон *"  required/>
+                            }
                             <input type="submit" className="btn submit-btn"  value="Узнать"/>
                         </form>
                     </div>
