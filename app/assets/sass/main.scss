@@ -165,6 +165,9 @@
 /*Audit Block START*/
 .audit{
   margin: 120px 0 0 0;
+  &__title{
+    @extend .seo__title;
+  }
   &-info{
     display: flex;
     flex-flow: row;
@@ -196,3 +199,45 @@
   }
 }
 /*Audit Block END*/
+/*Include-audit block START*/
+  .include{
+    @extend .audit;
+    position: relative;
+    background-size: cover;
+    background: url("../images/includebackground.jpg") no-repeat center center;
+    &-wrapper{
+      background-color: rgba(0, 0, 0, 0.658824);
+      padding-top: 50px;
+    }
+    &-materials{
+      display: flex;
+      flex-flow: row;
+      &__list, &__desc{
+        width: 48%;
+      }
+      &__list{
+        .list-item{
+          @extend .seo__partitions-items;
+          color: white;
+          font-family: $headers-font-regular;
+          &::after, &::before{
+            border-left: 1px solid #333333;
+          }
+          img{
+            padding-right: 0px;
+            margin-right: 20px;
+            width: 61px;
+          }
+        }
+      }
+    }
+    &__title{
+      @extend .audit__title;
+      margin-bottom: 38px;
+      &::after, &::before{
+        border-color: #333333;
+      }
+      color: white;
+    }
+  }
+/*Include-audit block END*/
